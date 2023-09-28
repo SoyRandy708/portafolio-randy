@@ -1,0 +1,48 @@
+---
+import IconGithub from "../Icons/IconGithub.astro";
+import IconLinkedin from "../Icons/IconLinkedin.astro";
+import IconFile from "../Icons/IconFile.astro";
+---
+
+<header class="flex justify-center items-center min-h-screen px-6 py-2">
+  <section class="flex flex-col gap-6">
+    <h1 class="flex flex-col text-5xl font-bold bg-gradient-to-br from-[var(--tertiary-color)] to-[var(--secundary-color)] text-transparent bg-clip-text">
+      Randy Ochoa Nuñez
+      <span class="text-3xl"> Frontend Developer </span>
+    </h1>
+
+    <div class="flex justify-between">      
+      <button class="button gap-1">
+        <IconGithub width="25" height="25" />
+        GitHub
+      </button>
+  
+      <button class="button">
+        <IconLinkedin width="30" height="30" />
+        LinkedIn 
+      </button>
+  
+      <button class="button">
+        <IconFile width="30" height="30" />
+        Descarga CV
+      </button>
+    </div>
+  </section>
+</header>
+
+<style>
+  .button {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    padding: 4px 8px;
+    border-radius: 8px;
+    background-color: var(--fourth-color);
+    transition: transform .3s ease, color .3s ease;
+  }
+
+  .button:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+  }
+</style>
