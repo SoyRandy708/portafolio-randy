@@ -3,7 +3,7 @@ import IconMenu from "../Icons/IconMenu.astro"
 import IconClose from "../Icons/IconClose.astro"
 ---
 
-<nav class="flex flex-col fixed top-0 left-0 right-0 px-4 py-2 bg-[var(--fourth-color)] sm:py-4">
+<nav class="flex flex-col fixed top-0 left-0 right-0 px-4 py-2 bg-[var(--fourth-color)] backdrop-blur sm:py-4">
   <div class="self-end sm:hidden">
     <div class="nuevo">
       <IconMenu width="40" height="40" class="nuevo"/>
@@ -15,31 +15,37 @@ import IconClose from "../Icons/IconClose.astro"
   
   <ul class="menu hidden flex-col gap-5 justify-evenly w-full max-w-3xl m-auto sm:flex sm:flex-row">
     <li>
-      <a href="">
+      <a href="#">
       Sobre mi
       </a>
     </li>
 
     <li>
-      <a href="">
+      <a href="#">
         Proyectos
       </a>
     </li>
 
     <li>
-      <a href="">
+      <a href="#">
         Redes sociales
       </a>
     </li>
   </ul>
 </nav>
 
+<style>
+  .menu li a {
+    display: block;
+  }
+</style>
+
 <script>  
   let isMenuOpen = false
-  const bottons = document.querySelectorAll(".nuevo")
+  const buttons = document.querySelectorAll(".nuevo")
   const menu = document.querySelector(".menu")
 
-  bottons.forEach(button => {
+  buttons.forEach(button => {
     button.addEventListener("click", () => {
       isMenuOpen = !isMenuOpen
       if(isMenuOpen) {
@@ -50,7 +56,7 @@ import IconClose from "../Icons/IconClose.astro"
         menu.classList.remove("flex")
       }
       
-      bottons.forEach(button => {
+      buttons.forEach(button => {
         button.classList.toggle("hidden")
       })
     })
