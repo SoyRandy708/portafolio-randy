@@ -1,12 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
 import Header from '../components/Header.astro';
+import Project from '../components/Project.astro';
+import { PROJECTS } from '../constants';
 ---
 
 <Layout title="Randy Ochoa Nuñez">
 	<Header />
-	<p>Redes sociales</p>
-	<p>Proyectos</p> 
+
+	<section class="flex flex-col gap-6">
+		{PROJECTS.map(project => {
+			return (
+				<Project
+					title={project.title}
+					description={project.description}
+					technologies={project.technologies}
+					github={project.github}
+					web={project.web}
+					image={project.image}
+				/>
+			)
+		})}
+	</section>
+
 	<p>Tecnologias</p>
+	<p>Que mas puedo Agregar?</p>
 </Layout>
