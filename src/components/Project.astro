@@ -1,5 +1,7 @@
 ---
 import IconGithub from '../Icons/IconGithub.astro';
+import IconWorld from '../Icons/IconWorld.astro';
+
 interface Props {
   title: string,
   description: string,
@@ -8,6 +10,7 @@ interface Props {
   web: string,
   image: string
 }
+
 const { title, description, technologies, github, web, image } = Astro.props
 ---
 
@@ -29,9 +32,9 @@ const { title, description, technologies, github, web, image } = Astro.props
   <a 
     href={web} 
     target="_blank"
-    class="flex gap-2 items-center"
+    class="flex gap-1 items-center"
   >
-    <!-- Icono Web -->
+    <IconWorld width="30" height="30" />
     Sitio Web
   </a>
 </article>
