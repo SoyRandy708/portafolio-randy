@@ -1,19 +1,19 @@
 export const PROJECTS = [
-  {
-    title: "eCommerce",
-    description: "Simulacion de eCommerce para poder realizar tus pedidos y compras de las distintas categorias de productos con las que contamos.",
-    technologies: ["React", "JS", "HTML", "CSS"],
-    github: "https://github.com/SoyRandy708/eCommerce",
-    web: "https://proyect-eccomerce.netlify.app/",
-    image: "",
-  },
+  // {
+  //   title: "eCommerce",
+  //   description: "Simulacion de eCommerce para poder realizar tus pedidos y compras de las distintas categorias de productos con las que contamos.",
+  //   technologies: ["React", "JS", "HTML", "CSS"],
+  //   github: "https://github.com/SoyRandy708/eCommerce",
+  //   web: "https://proyect-eccomerce.netlify.app/",
+  //   image: "",
+  // },
   {
     title: "ToDo List",
     description: "Sitio web para poder crear, modificar, eliminar y guardar tus tareas que tienes pendientes, con la opcion de poder filtrarlos por progreso, o por su nombre.",
     technologies: ["React", "Sass"],
     github: "https://github.com/SoyRandy708/ToDo-List",
     web: "https://soyrandy708.github.io/ToDo-List/", 
-    image: "",
+    image: "/todo-list.jpg",
   },
   {
     title: "Formulario con Validaciones",
@@ -21,7 +21,7 @@ export const PROJECTS = [
     technologies: ["HTML", "CSS", "JS"],
     github: "https://github.com/SoyRandy708/FormularioConValidaciones",
     web: "https://soyrandy708.github.io/FormularioConValidaciones/",
-    image: "",
+    image: "/formulario.jpg",
   },
   {
     title: "Calculadora",
@@ -29,7 +29,7 @@ export const PROJECTS = [
     technologies: ["HTML", "CSS", "JS"],
     github: "https://github.com/SoyRandy708/Calculadora-JS",
     web: "https://soyrandy708.github.io/Calculadora-JS/",
-    image: "",
+    image: "/calculadora.jpg",
   },
   {
     title: "Numeros Aleatorios",
@@ -37,7 +37,7 @@ export const PROJECTS = [
     technologies: ["HTML", "CSS", "JS"],
     github: "https://github.com/SoyRandy708/NumerosAleatorios",
     web: "https://soyrandy708.github.io/NumerosAleatorios/",
-    image: "",
+    image: "/numeros-aleatorios.jpg",
   },
   // {
   //   title: "",
