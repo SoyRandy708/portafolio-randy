@@ -1,27 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import Project from '../components/Project.astro';
-import { PROJECTS } from '../constants';
+import Projects from '../components/Projects.astro';
 ---
 
 <Layout title="Randy Ochoa Nuñez">
 	<Header />
-
-	<section class="grid gap-6">
-		{PROJECTS.map(project => {
-			return (
-				<Project
-					title={project.title}
-					description={project.description}
-					technologies={project.technologies}
-					github={project.github}
-					web={project.web}
-					image={project.image}
-				/>
-			)
-		})}
-	</section>
+	<Projects />
 
 	<p>Tecnologias</p>
 	<p>Que mas puedo Agregar?</p>

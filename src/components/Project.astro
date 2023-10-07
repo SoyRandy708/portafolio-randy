@@ -5,26 +5,29 @@ import IconWorld from '../Icons/IconWorld.astro';
 interface Props {
   title: string,
   description: string,
-  technologies: string[],
   github: string,
   web: string,
   image: string
 }
 
-const { title, description, technologies, github, web, image } = Astro.props
+const { title, description, github, web, image } = Astro.props
 ---
 
-<article class="flex flex-col bg-slate-700 rounded-lg overflow-hidden sm:flex-row">
+<article class="flex flex-col max-w-xl bg-slate-700 rounded-xl overflow-hidden md:flex-row md:max-w-none">
   <img 
     src={image} 
     alt={title}
-    class="sm:w-6/12 object-cover"
+    class="object-cover md:w-6/12"
   />
 
   <div class="p-4 ">
     <h3 class="text-3xl font-bold"> {title} </h3>
     <p class="my-5"> {description} </p>
-  
+
+    <div class="flex gap-3 my-5">
+      <slot />
+    </div>
+
     <div class="flex gap-3">
       <a 
         href={github} 
@@ -51,9 +54,18 @@ const { title, description, technologies, github, web, image } = Astro.props
   .button {
     display: flex;
     align-items: center;
+    white-space: nowrap;
     width: 100%;
     padding: 8px 12px;
     border-radius: 8px;
     background-color: var(--fourth-color);
+    transition: transform .3s ease, color .3s ease;
+  }
+
+  @media (hover: hover) {    
+    .button:hover {
+      color: var(--primary-color);
+      transform: scale(1.1);
+    }
   }
 </style>
