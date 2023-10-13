@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #e8e8e8;
+  --secundary-color: #07090d;
+  --tertiary-color: rgba(57, 162, 223, 1);
+  --fourth-color: rgba(57, 162, 223, .5);
+}
+
+html {
+  @apply scroll-smooth
+}
+
+body {
+  @apply bg-custom-two text-custom-one dark:bg-custom-one dark:text-custom-two font-sans transition-colors duration-300;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #07090d;
+    --secundary-color: #e8e8e8;
+    --tertiary-color: rgba(57, 162, 223, 1);
+    --fourth-color: rgba(57, 162, 223, .5);
+  }
+}
+
+@layer components {
+  .button {
+    @apply flex items-center flex-nowrap px-3 py-2 rounded-lg transition duration-300 bg-custom-three hover:text-custom-two hover:scale-110;  
+  }
+}

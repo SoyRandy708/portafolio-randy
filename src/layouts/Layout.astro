@@ -5,6 +5,7 @@ interface Props {
 
 const { title } = Astro.props;
 
+import "./index.css"
 import Navbar from '../components/Navbar.astro';
 ---
 
@@ -24,27 +25,3 @@ import Navbar from '../components/Navbar.astro';
 		</main>
 	</body>
 </html>
-
-<style is:global>
-	:root {
-		--primary-color: #e8e8e8;
-		--secundary-color: #07090d;
-		--tertiary-color: rgba(57, 162, 223, 1);
-		--fourth-color: rgba(57, 162, 223, .5);
-	}
-	
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: var(--primary-color);
-		color: var(--secundary-color);
-	}
-	
-	@media (prefers-color-scheme: dark) {
-		:root {
-			--primary-color: #07090d;
-			--secundary-color: #e8e8e8;
-			--tertiary-color: rgba(57, 162, 223, 1);
-			--fourth-color: rgba(57, 162, 223, .5);
-		}
-  }
-</style>
