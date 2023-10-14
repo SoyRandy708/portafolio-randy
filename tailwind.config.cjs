@@ -7,8 +7,11 @@ module.exports = {
 			colors: {
 				custom: {
 					one: "#18181B",
-					two: "#f8fafc",
-					three: "#22D3EE",
+					two: "#ecfeff",
+					three: "#22d3ee",
+					four: "#0ea5e9",
+					five: "#3b82f6",
+					six: "#1d4ed8",
 				}
 			}
 		},

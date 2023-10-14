@@ -13,7 +13,7 @@ interface Props {
 const { title, description, github, web, image } = Astro.props
 ---
 
-<article class="flex flex-col max-w-xl bg-slate-700 rounded-xl overflow-hidden md:flex-row md:max-w-none">
+<article class="flex flex-col max-w-xl bg-custom-three rounded-xl shadow-xl overflow-hidden dark:shadow-none dark:bg-custom-five md:flex-row md:max-w-none">
   <img 
     src={image} 
     alt={title}
@@ -32,7 +32,7 @@ const { title, description, github, web, image } = Astro.props
       <a 
         href={github} 
         target="_blank"
-        class="button gap-2"
+        class="button w-full gap-2"
       >
         <IconGithub width="25" height="25" />
         GitHub
@@ -41,7 +41,7 @@ const { title, description, github, web, image } = Astro.props
       <a 
         href={web} 
         target="_blank"
-        class="button gap-1"
+        class="button w-full gap-1"
       >
         <IconWorld width="30" height="30" />
         Sitio Web
@@ -49,23 +49,3 @@ const { title, description, github, web, image } = Astro.props
     </div>
   </div>
 </article>
-
-<style>
-  .button {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    width: 100%;
-    padding: 8px 12px;
-    border-radius: 8px;
-    background-color: var(--fourth-color);
-    transition: transform .3s ease, color .3s ease;
-  }
-
-  @media (hover: hover) {    
-    .button:hover {
-      color: var(--primary-color);
-      transform: scale(1.1);
-    }
-  }
-</style>

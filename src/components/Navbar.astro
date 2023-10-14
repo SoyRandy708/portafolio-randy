@@ -4,21 +4,21 @@ import IconClose from "../Icons/IconClose.astro"
 import IconSun from "../Icons/IconSun.astro";
 ---
 
-<nav class="flex flex-col fixed top-0 left-0 right-0 px-4 py-2 bg-[var(--fourth-color)] backdrop-blur sm:py-4">
+<nav class="flex flex-col fixed top-0 left-0 right-0 px-4 z-10 py-3 bg-custom-four/75 dark:bg-custom-six/75 backdrop-blur">
   <div class="flex justify-between sm:hidden">
     <button class="button-dark-mode bg-custom-two rounded-lg p-1 dark:bg-custom-one">
       <IconSun width="30" height="30"/>
     </button>
 
     <div class="icon">
-      <IconMenu width="40" height="40" />
+      <IconMenu width="38" height="38" />
     </div>
     <div class="icon hidden">
-      <IconClose width="40" height="40" />
+      <IconClose width="38" height="38" />
     </div>
   </div>
   
-  <ul class="menu hidden flex-col gap-5 justify-evenly w-full max-w-3xl m-auto sm:flex sm:flex-row sm:items-center">
+  <ul class="menu hidden flex-col gap-5 justify-evenly w-full max-w-3xl m-auto pt-8 sm:flex sm:flex-row sm:items-center sm:pt-0">
     <li>
       <a href="#">
       Sobre mi
