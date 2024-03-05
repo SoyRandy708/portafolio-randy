@@ -1,13 +1,17 @@
 ---
-import IconMenu from "../Icons/IconMenu.astro"
-import IconClose from "../Icons/IconClose.astro"
-import IconSun from "../Icons/IconSun.astro";
+import IconMenu from "@/Icons/IconMenu.astro";
+import IconClose from "@/Icons/IconClose.astro";
+import IconSun from "@/Icons/IconSun.astro";
 ---
 
-<nav class="flex flex-col fixed top-0 left-0 right-0 px-4 z-10 py-3 bg-custom-blue-500/75 dark:bg-custom-blue-600/75 backdrop-blur">
+<nav
+  class="flex flex-col fixed top-0 left-0 right-0 px-4 z-10 py-3 bg-custom-blue-500/75 dark:bg-custom-blue-600/75 backdrop-blur"
+>
   <div class="flex justify-between sm:hidden">
-    <button class="button-dark-mode bg-custom-two rounded-lg p-1 dark:bg-custom-one">
-      <IconSun width="30" height="30"/>
+    <button
+      class="button-dark-mode bg-custom-two rounded-lg p-1 dark:bg-custom-one"
+    >
+      <IconSun width="30" height="30" />
     </button>
 
     <div class="icon">
@@ -17,27 +21,25 @@ import IconSun from "../Icons/IconSun.astro";
       <IconClose width="38" height="38" />
     </div>
   </div>
-  
-  <ul class="menu hidden flex-col gap-5 justify-evenly w-full max-w-3xl m-auto pt-8 sm:flex sm:flex-row sm:items-center sm:pt-0">
+
+  <ul
+    class="menu hidden flex-col gap-5 justify-evenly w-full max-w-3xl m-auto pt-8 sm:flex sm:flex-row sm:items-center sm:pt-0"
+  >
     <li>
-      <a href="#sobre-mi">
-      Sobre mi
-      </a>
+      <a href="#sobre-mi"> Sobre mi</a>
     </li>
 
     <li>
-      <a href="#proyectos">
-        Proyectos
-      </a>
+      <a href="#proyectos"> Proyectos</a>
     </li>
 
     <li>
-      <a href="#">
-        Redes sociales
-      </a>
+      <a href="#"> Redes sociales</a>
     </li>
-    <button class="hidden button-dark-mode bg-custom-two rounded-lg p-1 dark:bg-custom-one sm:flex">
-      <IconSun width="30" height="30"/>
+    <button
+      class="hidden button-dark-mode bg-custom-two rounded-lg p-1 dark:bg-custom-one sm:flex"
+    >
+      <IconSun width="30" height="30" />
     </button>
   </ul>
 </nav>
@@ -48,46 +50,48 @@ import IconSun from "../Icons/IconSun.astro";
   }
 </style>
 
-<script>  
-  let isMenuOpen = false
-  const buttons = document.querySelectorAll(".icon")
-  const menu = document.querySelector(".menu")
+<script>
+  let isMenuOpen = false;
+  const buttons = document.querySelectorAll(".icon");
+  const menu = document.querySelector(".menu");
 
-  buttons.forEach(button => {
+  buttons.forEach((button) => {
     button.addEventListener("click", () => {
-      isMenuOpen = !isMenuOpen
-      if(isMenuOpen) {
-        menu.classList.remove("hidden")
-        menu.classList.add("flex")
+      isMenuOpen = !isMenuOpen;
+      if (isMenuOpen) {
+        menu.classList.remove("hidden");
+        menu.classList.add("flex");
       } else {
-        menu.classList.add("hidden")
-        menu.classList.remove("flex")
+        menu.classList.add("hidden");
+        menu.classList.remove("flex");
       }
-      
-      buttons.forEach(button => {
-        button.classList.toggle("hidden")
-      })
-    })
-  })
 
-  const buttonsDarkMode = document.querySelectorAll(".button-dark-mode")
+      buttons.forEach((button) => {
+        button.classList.toggle("hidden");
+      });
+    });
+  });
+
+  const buttonsDarkMode = document.querySelectorAll(".button-dark-mode");
   let toggleDarkMode = document.documentElement.className === "dark";
-  
-  if (localStorage.theme === "dark" ||
-  (!('theme' in localStorage)  &&
-  window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark')
+
+  if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.classList.add("dark");
   } else {
-    document.documentElement.classList.remove('dark')
+    document.documentElement.classList.remove("dark");
   }
 
-  buttonsDarkMode.forEach(button => {
+  buttonsDarkMode.forEach((button) => {
     button.addEventListener("click", () => {
-      toggleDarkMode = document.documentElement.classList.toggle("dark")
-  
-      toggleDarkMode 
-        ? localStorage.theme = "dark"
-        : localStorage.theme = "light"
-    })
-  })
+      toggleDarkMode = document.documentElement.classList.toggle("dark");
+
+      toggleDarkMode
+        ? (localStorage.theme = "dark")
+        : (localStorage.theme = "light");
+    });
+  });
 </script>

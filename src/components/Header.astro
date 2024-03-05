@@ -1,28 +1,43 @@
 ---
-import IconGithub from "../Icons/IconGithub.astro";
-import IconLinkedin from "../Icons/IconLinkedin.astro";
-import IconFile from "../Icons/IconFile.astro";
+import IconGithub from "@/Icons/IconGithub.astro";
+import IconLinkedin from "@/Icons/IconLinkedin.astro";
+import IconFile from "@/Icons/IconFile.astro";
 ---
 
 <header id="sobre-mi" class="flex justify-center items-center min-h-screen">
   <section class="flex flex-col gap-6">
-    <h1 class="flex flex-col text-4xl font-bold bg-gradient-to-br from-custom-blue-700 to-custom-blue-400 dark:from-custom-blue-400 dark:to-custom-blue-100 text-transparent bg-clip-text sm:text-5xl">
+    <h1
+      class="flex flex-col text-4xl font-bold bg-gradient-to-br from-custom-blue-700 to-custom-blue-400 dark:from-custom-blue-400 dark:to-custom-blue-100 text-transparent bg-clip-text sm:text-5xl"
+    >
       Randy Ochoa Nuñez
-      <span class="text-2xl sm:text-3xl"> Frontend Developer </span>
+      <span class="text-2xl sm:text-3xl"> Frontend Developer</span>
     </h1>
 
-    <div class="flex flex-col justify-between gap-3 sm:flex-row">      
-      <a class="button gap-1" target="_blank" href="https://github.com/SoyRandy708">
+    <div class="flex flex-col justify-between gap-3 sm:flex-row">
+      <a
+        class="button gap-1"
+        target="_blank"
+        href="https://github.com/SoyRandy708"
+      >
         <IconGithub width="25" height="25" />
         GitHub
       </a>
-  
-      <a class="button" target="_blank" href="https://www.linkedin.com/in/randy-ochoa/">
+
+      <a
+        class="button"
+        target="_blank"
+        href="https://www.linkedin.com/in/randy-ochoa/"
+      >
         <IconLinkedin width="30" height="30" />
-        LinkedIn 
+        LinkedIn
       </a>
-  
-      <a class="button" target="_blank" download href="/CV_Randy-Ochoa_Frontend-Developer.pdf">
+
+      <a
+        class="button"
+        target="_blank"
+        download
+        href="/CV_Randy-Ochoa_Frontend-Developer.pdf"
+      >
         <IconFile width="30" height="30" />
         Descarga CV
       </a>
