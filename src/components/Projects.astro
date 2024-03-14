@@ -1,83 +1,59 @@
 ---
-import IconCSS from "@/Icons/IconCSS.astro";
+import Proyectos from "@/proyectos.json";
 import IconHTML from "@/Icons/IconHTML.astro";
-import IconJS from "@/Icons/IconJS.astro";
-import IconReact from "@/Icons/IconReact.astro";
+import IconCSS from "@/Icons/IconCSS.astro";
 import IconSass from "@/Icons/IconSass.astro";
 import IconTailwind from "@/Icons/IconTailwind.astro";
-import Project from "@/components/Project.astro";
+import IconJS from "@/Icons/IconJS.astro";
+import IconReact from "@/Icons/IconReact.astro";
+import IconWorld from "@/Icons/IconWorld.astro";
+import IconGithub from "@/Icons/IconGithub.astro";
+
+const TECNOLOGIAS_ICONS = {
+  HTML: IconHTML,
+  CSS: IconCSS,
+  Sass: IconSass,
+  Tailwind: IconTailwind,
+  JS: IconJS,
+  React: IconReact,
+};
 ---
 
 <section id="proyectos" class="flex flex-col items-center gap-12 py-28">
   <h2 class="text-3xl font-bold">PROYECTOS</h2>
 
-  <!-- <Project
-      title="eCommerce"
-      description="Simulacion de eCommerce para poder realizar tus pedidos y compras de las distintas categorias de productos con las que contamos."
-      github="https://github.com/SoyRandy708/eCommerce"
-      web="https://proyect-eccomerce.netlify.app/"
-      image=""
-    >
-    <IconReact width="50" height="50"/>
-    <IconTailwind width="50" height="50"/>
-  </Project> -->
+  {
+    Proyectos.map(
+      ({ titulo, descripcion, tecnologias, github, web, imagen }) => (
+        <article class="flex flex-col max-w-xl bg-custom-blue-300 rounded-xl shadow-xl overflow-hidden dark:shadow-none dark:bg-custom-blue-700 md:flex-row md:max-w-none">
+          <img src={imagen} alt={titulo} class="object-cover md:w-6/12" />
 
-  <Project
-    title="ToDo List"
-    description="Sitio web para poder crear, modificar, eliminar y guardar tus tareas que tienes pendientes, con la opcion de poder filtrarlos por progreso, o por su nombre."
-    github="https://github.com/SoyRandy708/ToDo-List"
-    web="https://soyrandy708.github.io/ToDo-List/"
-    image="/todo-list.jpg"
-  >
-    <IconReact width="50" height="50" />
-    <IconSass width="50" height="50" />
-  </Project>
+          <div class="p-4">
+            <h3 class="text-3xl font-bold"> {titulo} </h3>
+            <p class="my-5"> {descripcion} </p>
 
-  <Project
-    title="Formulario con Validaciones"
-    description="Formulario sencillo en el que se hacen validaciones para saber si se estan ingresando correctamente los datos de que se piden."
-    github="https://github.com/SoyRandy708/FormularioConValidaciones"
-    web="https://soyrandy708.github.io/FormularioConValidaciones/"
-    image="/formulario.jpg"
-  >
-    <IconHTML width="50" height="50" />
-    <IconCSS width="50" height="50" />
-    <IconJS width="50" height="50" />
-  </Project>
+            <div class="flex gap-3 my-5">
+              {tecnologias.map((tecnologia) => {
+                const Icon = TECNOLOGIAS_ICONS[tecnologia];
 
-  <Project
-    title="Calculadora"
-    description="Calculadora basica para poder realizar distintas operacion como suma, resta, multiplicacion y division."
-    github="https://github.com/SoyRandy708/Calculadora-JS"
-    web="https://soyrandy708.github.io/Calculadora-JS/"
-    image="/calculadora.jpg"
-  >
-    <IconHTML width="50" height="50" />
-    <IconCSS width="50" height="50" />
-    <IconJS width="50" height="50" />
-  </Project>
+                return <Icon width="50" height="50" />;
+              })}
+            </div>
 
-  <Project
-    title="Numeros Aleatorios"
-    description="Generador de numeros aleatorios donde puedes ingresar el rango entre los cuales se daran los resultados y la cantidad de resultado que quieres."
-    github="https://github.com/SoyRandy708/NumerosAleatorios"
-    web="https://soyrandy708.github.io/NumerosAleatorios/"
-    image="/numeros-aleatorios.jpg"
-  >
-    <IconHTML width="50" height="50" />
-    <IconCSS width="50" height="50" />
-    <IconJS width="50" height="50" />
-  </Project>
+            <div class="flex gap-3">
+              <a href={github} target="_blank" class="button w-full gap-2">
+                <IconGithub width="25" height="25" />
+                GitHub
+              </a>
 
-  <!-- <Project
-    title=""
-    description=""
-    github=""
-    web=""
-    image=""
-  >
-    <IconHTML width="50" height="50"/>
-    <IconCSS width="50" height="50"/>
-    <IconJS width="50" height="50"/>
-  </Project> -->
+              <a href={web} target="_blank" class="button w-full gap-1">
+                <IconWorld width="30" height="30" />
+                Sitio Web
+              </a>
+            </div>
+          </div>
+        </article>
+      ),
+    )
+  }
 </section>
