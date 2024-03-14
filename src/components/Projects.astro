@@ -1,22 +1,8 @@
 ---
 import Proyectos from "@/proyectos.json";
-import IconHTML from "@/Icons/IconHTML.astro";
-import IconCSS from "@/Icons/IconCSS.astro";
-import IconSass from "@/Icons/IconSass.astro";
-import IconTailwind from "@/Icons/IconTailwind.astro";
-import IconJS from "@/Icons/IconJS.astro";
-import IconReact from "@/Icons/IconReact.astro";
 import IconWorld from "@/Icons/IconWorld.astro";
 import IconGithub from "@/Icons/IconGithub.astro";
-
-const TECNOLOGIAS_ICONS = {
-  HTML: IconHTML,
-  CSS: IconCSS,
-  Sass: IconSass,
-  Tailwind: IconTailwind,
-  JS: IconJS,
-  React: IconReact,
-};
+import { TECNOLOGIAS_ICONOS } from "@/consts";
 ---
 
 <section id="proyectos" class="flex flex-col items-center gap-12 py-28">
@@ -34,7 +20,7 @@ const TECNOLOGIAS_ICONS = {
 
             <div class="flex gap-3 my-5">
               {tecnologias.map((tecnologia) => {
-                const Icon = TECNOLOGIAS_ICONS[tecnologia];
+                const Icon = TECNOLOGIAS_ICONOS[tecnologia];
 
                 return <Icon width="50" height="50" />;
               })}

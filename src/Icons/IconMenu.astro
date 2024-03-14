@@ -1,12 +1,5 @@
----
-interface Props {
-  width: string
-  height: string
-}
-
-const { width, height } = Astro.props
----
-
-<svg width={width} height={height} fill="currentColor" viewBox="-2.48 -2.48 29.71 29.71">
-  <path d="M0 3.875a2 2 0 0 1 2-2h20.75a2 2 0 0 1 0 4H2a2 2 0 0 1-2-2zm22.75 6.5H2a2 2 0 0 0 0 4h20.75a2 2 0 0 0 0-4zm0 8.5H2a2 2 0 0 0 0 4h20.75a2 2 0 0 0 0-4z"/>
+<svg {...Astro.props} fill="currentColor" viewBox="-2.48 -2.48 29.71 29.71">
+  <path
+    d="M0 3.875a2 2 0 0 1 2-2h20.75a2 2 0 0 1 0 4H2a2 2 0 0 1-2-2zm22.75 6.5H2a2 2 0 0 0 0 4h20.75a2 2 0 0 0 0-4zm0 8.5H2a2 2 0 0 0 0 4h20.75a2 2 0 0 0 0-4z"
+  ></path>
 </svg>
