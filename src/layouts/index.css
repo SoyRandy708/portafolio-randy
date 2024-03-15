@@ -7,11 +7,11 @@ html {
 }
 
 body {
-  @apply bg-custom-blue-50 text-custom-one dark:bg-custom-blue-950 dark:text-custom-two font-sans font-light transition-colors duration-300;
+  @apply bg-custom-white text-custom-black dark:bg-custom-black dark:text-custom-white font-sans font-light;
 }
 
 @layer components {
   .button {
-    @apply flex items-center whitespace-nowrap px-3 py-2 rounded-lg transition duration-300 bg-custom-blue-500 dark:bg-custom-blue-500 hover:text-custom-two hover:scale-110 hover:dark:text-custom-one;  
+    @apply flex items-center whitespace-nowrap px-3 py-2 rounded-lg hover:transition duration-300 bg-secundary-white hover:bg-accent-white dark:bg-secundary-black dark:hover:bg-accent-black hover:scale-110;  
   }
 }
