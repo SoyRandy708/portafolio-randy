@@ -1,15 +1,15 @@
 ---
-import Proyectos from "@/proyectos.json";
 import IconWorld from "@/Icons/IconWorld.astro";
 import IconGithub from "@/Icons/IconGithub.astro";
 import { TECNOLOGIAS_ICONOS } from "@/consts";
+import { PROYECTOS } from "@/consts";
 ---
 
 <section id="proyectos" class="flex flex-col items-center gap-12 py-28">
   <h2 class="text-3xl font-bold">PROYECTOS</h2>
 
   {
-    Proyectos.map(
+    PROYECTOS.map(
       ({ titulo, descripcion, tecnologias, github, web, imagen }) => (
         <article class="flex flex-col max-w-xl rounded-xl shadow-xl overflow-hidden bg-primary-white dark:bg-primary-black md:flex-row md:max-w-none">
           <img src={imagen} alt={titulo} class="object-cover md:w-6/12" />

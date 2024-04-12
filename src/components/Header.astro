@@ -2,6 +2,7 @@
 import IconGithub from "@/Icons/IconGithub.astro";
 import IconLinkedin from "@/Icons/IconLinkedin.astro";
 import IconFile from "@/Icons/IconFile.astro";
+import { IMAGE_URL } from "@/consts";
 ---
 
 <header id="sobre-mi" class="flex justify-center items-center min-h-screen">
@@ -34,7 +35,7 @@ import IconFile from "@/Icons/IconFile.astro";
         class="button"
         target="_blank"
         download
-        href="/CV_Randy-Ochoa_Frontend-Developer.pdf"
+        href=`${IMAGE_URL}/CV_Randy-Ochoa_Frontend-Developer.pdf`
       >
         <IconFile width="30" height="30" />
         Descarga CV
