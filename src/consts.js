@@ -4,6 +4,7 @@ import IconSass from "@/Icons/IconSass.astro";
 import IconTailwind from "@/Icons/IconTailwind.astro";
 import IconJS from "@/Icons/IconJS.astro";
 import IconReact from "@/Icons/IconReact.astro";
+import IconAstro from './Icons/IconAstro.astro';
 
 export const TECNOLOGIAS_ICONOS = {
   HTML: IconHTML,
@@ -12,11 +13,25 @@ export const TECNOLOGIAS_ICONOS = {
   Tailwind: IconTailwind,
   JS: IconJS,
   React: IconReact,
+  Astro: IconAstro,
 };
 
 export const IMAGE_URL = 'https://pub-3eddb542161c48299037aa5299510c01.r2.dev'
+export const GITHUB_URL = 'https://github.com/SoyRandy708'
 
 export const PROYECTOS = [
+  {
+    "titulo": "Monkey Type",
+    "descripcion": "Clon del sitio web Monkey Type para poder practicar la velocidad y precisión al escribir, proporcionando métricas de rendimiento como palabras por minuto (WPM) y precisión.",
+    "tecnologias": [
+      "Astro",
+      "CSS",
+      "JS"
+    ],
+    "github": `${GITHUB_URL}/monkeytype`,
+    "web": "https://monkeytype-randy.vercel.app/",
+    "imagen": `${IMAGE_URL}/monkeytype_mockup.webp`
+  },
   {
     "titulo": "ToDo List",
     "descripcion": "Sitio web para poder crear, modificar, eliminar y guardar tus tareas que tienes pendientes, con la opcion de poder filtrarlos por progreso, o por su nombre.",
@@ -24,9 +39,8 @@ export const PROYECTOS = [
       "React",
       "Sass"
     ],
-    "github": "https://github.com/SoyRandy708/ToDo-List",
-    "web": "https://soyrandy708.github.io/ToDo-List",
-    "imagen": `${IMAGE_URL}/todo-list.jpg`
+    "github": `${GITHUB_URL}/ToDo-List`,
+    "imagen": `${IMAGE_URL}/todolist_mockup.webp`
   },
   {
     "titulo": "Formulario con Validaciones",
@@ -36,32 +50,8 @@ export const PROYECTOS = [
       "CSS",
       "JS"
     ],
-    "github": "https://github.com/SoyRandy708/FormularioConValidaciones",
-    "web": "https://soyrandy708.github.io/FormularioConValidaciones/",
-    "imagen": `${IMAGE_URL}/formulario.jpg`
-  },
-  {
-    "titulo": "Calculadora",
-    "descripcion": "Calculadora basica para poder realizar distintas operacion como suma, resta, multiplicacion y division.",
-    "tecnologias": [
-      "HTML",
-      "CSS",
-      "JS"
-    ],
-    "github": "https://github.com/SoyRandy708/Calculadora-JS",
-    "web": "https://soyrandy708.github.io/Calculadora-JS/",
-    "imagen": `${IMAGE_URL}/calculadora.jpg`
-  },
-  {
-    "titulo": "Numeros Aleatorios",
-    "descripcion": "Generador de numeros aleatorios donde puedes ingresar el rango entre los cuales se daran los resultados y la cantidad de resultado que quieres.",
-    "tecnologias": [
-      "HTML",
-      "CSS",
-      "JS"
-    ],
-    "github": "https://github.com/SoyRandy708/NumerosAleatorios",
-    "web": "https://soyrandy708.github.io/NumerosAleatorios/",
-    "imagen": `${IMAGE_URL}/numeros-aleatorios.jpg`
+    "github": `${GITHUB_URL}/FormularioConValidaciones`,
+    "web": "https://formulario-con-validaciones.vercel.app/",
+    "imagen": `${IMAGE_URL}/formulario_mockup.webp`
   },
 ]

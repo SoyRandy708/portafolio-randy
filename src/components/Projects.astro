@@ -26,16 +26,18 @@ import { PROYECTOS } from "@/consts";
               })}
             </div>
 
-            <div class="flex gap-3">
+            <div class="botones flex gap-3">
               <a href={github} target="_blank" class="button w-full gap-2">
                 <IconGithub width="25" height="25" />
                 GitHub
               </a>
 
-              <a href={web} target="_blank" class="button w-full gap-1">
-                <IconWorld width="30" height="30" />
-                Sitio Web
-              </a>
+              {web && (
+                <a href={web} target="_blank" class="button w-full gap-1">
+                  <IconWorld width="30" height="30" />
+                  Sitio Web
+                </a>
+              )}
             </div>
           </div>
         </article>
@@ -43,3 +45,12 @@ import { PROYECTOS } from "@/consts";
     )
   }
 </section>
+
+<style>
+  .botones {
+    display: flex;
+    a {
+      max-width: 50%;
+    }
+  }
+</style>
