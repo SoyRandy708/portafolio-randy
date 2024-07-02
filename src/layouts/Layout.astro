@@ -5,7 +5,6 @@ interface Props {
 
 const { title } = Astro.props;
 
-import "./index.css";
 import Navbar from "../components/Navbar.astro";
 ---
 
@@ -18,8 +17,43 @@ import Navbar from "../components/Navbar.astro";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="max-w-4xl m-auto px-4">
+  <body>
     <Navbar />
     <slot />
   </body>
 </html>
+
+<style is:global>
+  :root {
+    --color-primario: #f2d;
+    --background-color: #2f3232;
+  }
+
+  * {
+    list-style: none;
+    font-family: system-ui, sans-serifs;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px;
+    background-color: var(--background-color);
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+  }
+</style>
