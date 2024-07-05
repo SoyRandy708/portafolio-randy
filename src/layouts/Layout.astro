@@ -25,13 +25,16 @@ import Navbar from "../components/Navbar.astro";
 
 <style is:global>
   :root {
-    --color-primario: #f2d;
+    --color-primario: #acff27;
     --background-color: #2f3232;
+    --texto-color: #f0f0f0;
   }
 
   * {
+    user-select: none;
     list-style: none;
     font-family: system-ui, sans-serifs;
+    color: var(--texto-color);
   }
 
   html {
@@ -52,8 +55,32 @@ import Navbar from "../components/Navbar.astro";
     white-space: nowrap;
     padding: 8px 12px;
     border-radius: 8px;
-    background-color: red;
-    color: white;
     text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .boton-uno a,
+  a.boton-uno {
+    background-color: var(--background-color);
+    color: var(--color-primario);
+
+    path {
+      color: var(--color-primario);
+    }
+  }
+
+  .boton-dos a,
+  a.boton-dos {
+    background-color: var(--color-primario);
+    color: var(--background-color);
+
+    path {
+      color: var(--background-color);
+    }
   }
 </style>
