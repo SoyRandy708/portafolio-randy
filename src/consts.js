@@ -11,7 +11,7 @@ export const TECNOLOGIAS_ICONOS = {
   CSS: IconCSS,
   Sass: IconSass,
   Tailwind: IconTailwind,
-  JS: IconJS,
+  JavaScript: IconJS,
   React: IconReact,
   Astro: IconAstro,
 };
@@ -26,7 +26,7 @@ export const PROYECTOS = [
     "tecnologias": [
       "Astro",
       "CSS",
-      "JS"
+      "JavaScript"
     ],
     "github": `${GITHUB_URL}/monkeytype`,
     "web": "https://monkeytype-randy.vercel.app/",
@@ -48,7 +48,7 @@ export const PROYECTOS = [
     "tecnologias": [
       "HTML",
       "CSS",
-      "JS"
+      "JavaScript"
     ],
     "github": `${GITHUB_URL}/FormularioConValidaciones`,
     "web": "https://formulario-con-validaciones.vercel.app/",
