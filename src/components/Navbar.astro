@@ -11,13 +11,13 @@ import IconClose from "@/Icons/IconClose.astro";
       <div class="icon">
         <IconMenu width="38" height="38" />
       </div>
-      <div class="icon esconder">
+      <div class="icon mobile">
         <IconClose width="38" height="38" />
       </div>
     </div>
   </div>
 
-  <ul class="menu esconder boton-uno">
+  <ul class="menu mobile boton-uno">
     <li>
       <a href="#sobre-mi"> Sobre mi</a>
     </li>
@@ -48,8 +48,9 @@ import IconClose from "@/Icons/IconClose.astro";
     right: 0;
     z-index: 10;
     padding: 16px 12px;
-    box-shadow: 0 25px 25px rgb(0 0 0 / 0.15);
+    box-shadow: 0 0 25px rgb(0 0 0 / 0.15);
     background-color: var(--color-primario);
+    transition: transform 0.3s ease;
 
     @media (width > 600px) {
       flex-direction: row;
@@ -96,30 +97,37 @@ import IconClose from "@/Icons/IconClose.astro";
     }
   }
 
-  .esconder {
+  .mobile {
     @media (width < 600px) {
       display: none;
     }
   }
+
+  .ocultar {
+    transform: translateY(-100px);
+  }
 </style>
 
 <script>
-  let isMenuOpen = false;
-  const buttons = document.querySelectorAll(".icon");
+  const nav = document.querySelector("nav");
   const menu = document.querySelector(".menu");
+  const buttons = document.querySelectorAll(".icon");
   const menuItems = document.querySelectorAll(".menu li");
+
+  let isMenuOpen = false;
+  let lastScrollTop = 0;
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       isMenuOpen = !isMenuOpen;
       if (isMenuOpen) {
-        menu.classList.remove("esconder");
+        menu.classList.remove("mobile");
       } else {
-        menu.classList.add("esconder");
+        menu.classList.add("mobile");
       }
 
       buttons.forEach((button) => {
-        button.classList.toggle("esconder");
+        button.classList.toggle("mobile");
       });
     });
   });
@@ -127,11 +135,32 @@ import IconClose from "@/Icons/IconClose.astro";
   menuItems.forEach((item) => {
     item.addEventListener("click", () => {
       isMenuOpen = false;
-      menu.classList.add("esconder");
+      menu.classList.add("mobile");
 
       buttons.forEach((button) => {
-        button.classList.toggle("esconder");
+        button.classList.toggle("mobile");
       });
     });
+  });
+
+  window.addEventListener("scroll", () => {
+    let scrollTop = document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      nav.classList.add("ocultar");
+
+      if (isMenuOpen) {
+        isMenuOpen = !isMenuOpen;
+
+        menu.classList.add("mobile");
+        buttons.forEach((button) => {
+          button.classList.toggle("mobile");
+        });
+      }
+    } else {
+      nav.classList.remove("ocultar");
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   });
 </script>
