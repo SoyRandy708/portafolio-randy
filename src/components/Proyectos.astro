@@ -3,69 +3,71 @@ import IconWorld from "@/Icons/IconWorld.astro";
 import IconGithub from "@/Icons/IconGithub.astro";
 import { TECNOLOGIAS_ICONOS } from "@/consts";
 import { PROYECTOS } from "@/consts";
+import IconCode from "@/Icons/IconCode.astro";
 ---
 
-<section id="proyectos" class="proyectos">
-  <h2>PROYECTOS</h2>
+<section id="proyectos">
+  <h2>
+    <IconCode width="40" height="40" />
+    PROYECTOS
+  </h2>
 
-  {
-    PROYECTOS.map(
-      ({ titulo, descripcion, tecnologias, github, web, imagen }) => (
-        <article class="proyecto">
-          <img src={imagen} alt={titulo} />
+  <div class="proyectos">
+    {
+      PROYECTOS.map(
+        ({ titulo, descripcion, tecnologias, github, web, imagen }) => (
+          <article class="proyecto">
+            <img src={imagen} alt={titulo} />
 
-          <div class="informacion">
-            <h3> {titulo} </h3>
-            <p> {descripcion} </p>
+            <div class="informacion">
+              <h3> {titulo} </h3>
+              <p> {descripcion} </p>
 
-            <div class="tecnologias">
-              {tecnologias.map((tecnologia) => {
-                const Icon = TECNOLOGIAS_ICONOS[tecnologia];
+              <div class="tecnologias">
+                {tecnologias.map((tecnologia) => {
+                  const Icon = TECNOLOGIAS_ICONOS[tecnologia];
 
-                return (
-                  <div class="icon-container">
-                    <Icon class="icon" width="50" height="50" />
-                    <span> {tecnologia} </span>
-                  </div>
-                );
-              })}
+                  return (
+                    <div class="icon-container">
+                      <Icon class="icon" width="50" height="50" />
+                      <span> {tecnologia} </span>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div class="botones boton-uno">
+                {github && (
+                  <a href={github} target="_blank">
+                    <IconGithub width="25" height="25" />
+                    GitHub
+                  </a>
+                )}
+
+                {web && (
+                  <a href={web} target="_blank">
+                    <IconWorld width="30" height="30" />
+                    Web
+                  </a>
+                )}
+              </div>
             </div>
-
-            <div class="botones boton-uno">
-              {github && (
-                <a href={github} target="_blank">
-                  <IconGithub width="25" height="25" />
-                  GitHub
-                </a>
-              )}
-
-              {web && (
-                <a href={web} target="_blank">
-                  <IconWorld width="30" height="30" />
-                  Web
-                </a>
-              )}
-            </div>
-          </div>
-        </article>
-      ),
-    )
-  }
+          </article>
+        ),
+      )
+    }
+  </div>
 </section>
 
 <style>
+  section {
+    padding: 50px 0;
+  }
+
   .proyectos {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 48px;
-    padding: 50px 0;
-
-    h2 {
-      font-size: 30px;
-      font-weight: bold;
-      margin: 0;
-    }
   }
 
   .proyecto {
@@ -77,11 +79,10 @@ import { PROYECTOS } from "@/consts";
     border-radius: 12px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
     background-color: var(--color-primario);
-    view-timeline: --proyecto;
-    animation-timeline: --proyecto;
+    animation-timeline: view();
     animation-name: mostrar;
     animation-fill-mode: both;
-    animation-range: entry 20% cover 50%;
+    animation-range: entry 25% cover 50%;
 
     @media (width > 800px) {
       max-width: none;

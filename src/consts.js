@@ -6,6 +6,8 @@ import IconJS from "@/Icons/IconJS.astro";
 import IconReact from "@/Icons/IconReact.astro";
 import IconAstro from './Icons/IconAstro.astro';
 
+export const TODAS_TECNOLOGIAS = ["HTML", "CSS", "Sass", "Tailwind", "JavaScript", "React", "Astro"]
+
 export const TECNOLOGIAS_ICONOS = {
   HTML: IconHTML,
   CSS: IconCSS,
