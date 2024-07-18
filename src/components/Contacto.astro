@@ -1,0 +1,89 @@
+---
+import IconContact from "@/Icons/IconContact.astro";
+import IconFile from "@/Icons/IconFile.astro";
+import IconGithub from "@/Icons/IconGithub.astro";
+import IconLinkedin from "@/Icons/IconLinkedin.astro";
+import { IMAGE_URL } from "@/consts";
+---
+
+<footer id="contacto">
+  <article>
+    <h2>
+      <IconContact width="40" height="40" />
+      CONTACTO
+    </h2>
+
+    <div>
+      <p>
+        ¡Hola! Si te gustó mi portafolio y quieres contactarme para trabajar
+        juntos en proyectos o desarrollar alguna idea, no dudes en escribirme a
+        través de los siguientes medios.
+      </p>
+
+      <div class="botones boton-uno">
+        <a target="_blank" href="https://github.com/SoyRandy708">
+          <IconGithub width="25" height="25" />
+          GitHub
+        </a>
+
+        <a target="_blank" href="https://www.linkedin.com/in/randy-ochoa/">
+          <IconLinkedin width="30" height="30" />
+          LinkedIn
+        </a>
+
+        <a
+          target="_blank"
+          download
+          href=`${IMAGE_URL}/CV_Randy-Ochoa_Frontend-Developer.pdf`
+        >
+          <IconFile width="30" height="30" />
+          Descarga CV
+        </a>
+      </div>
+    </div>
+  </article>
+</footer>
+
+<style>
+  * {
+    color: var(--background-color);
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  article {
+    background-color: var(--color-primario);
+    padding: 20px;
+    border-radius: 20px;
+
+    div {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 50px;
+
+      p {
+        font-weight: 500;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  h2 {
+    color: var(--background-color);
+
+    path {
+      color: var(--background-color);
+    }
+  }
+
+  .botones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+</style>
