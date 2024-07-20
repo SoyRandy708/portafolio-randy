@@ -1,11 +1,15 @@
 ---
 import IconMenu from "@/Icons/IconMenu.astro";
 import IconClose from "@/Icons/IconClose.astro";
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <nav>
   <div class="nav-mobile">
-    <a href="#sobre-mi" class="boton-uno">Randy</a>
+    <a href="#Inicio" class="boton-uno">Randy</a>
 
     <div class="iconos">
       <div class="icon">
@@ -18,17 +22,15 @@ import IconClose from "@/Icons/IconClose.astro";
   </div>
 
   <ul class="menu mobile boton-uno">
-    <li>
-      <a href="#sobre-mi">Sobre mi</a>
-    </li>
-
-    <li>
-      <a href="#proyectos">Proyectos</a>
-    </li>
-
-    <li>
-      <a href="#contacto">Contacto</a>
-    </li>
+    {
+      Object.values(i18n.NAVBAR).map((item) => {
+        return (
+          <li>
+            <a href={`#${item}`}> {item} </a>
+          </li>
+        );
+      })
+    }
   </ul>
 </nav>
 

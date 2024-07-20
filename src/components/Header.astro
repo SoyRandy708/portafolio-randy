@@ -3,9 +3,13 @@ import IconGithub from "@/Icons/IconGithub.astro";
 import IconLinkedin from "@/Icons/IconLinkedin.astro";
 import IconFile from "@/Icons/IconFile.astro";
 import { IMAGE_URL } from "@/consts";
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
-<header id="sobre-mi">
+<header id={i18n.NAVBAR.HOME}>
   <section>
     <h1>
       Randy Ochoa Nuñez
@@ -15,12 +19,12 @@ import { IMAGE_URL } from "@/consts";
     <div class="botones boton-dos">
       <a target="_blank" href="https://github.com/SoyRandy708">
         <IconGithub width="25" height="25" />
-        GitHub
+        {i18n.BUTTONS.GITHUB}
       </a>
 
       <a target="_blank" href="https://www.linkedin.com/in/randy-ochoa/">
         <IconLinkedin width="30" height="30" />
-        LinkedIn
+        {i18n.BUTTONS.LINKEDIN}
       </a>
 
       <a
@@ -29,7 +33,7 @@ import { IMAGE_URL } from "@/consts";
         href=`${IMAGE_URL}/CV_Randy-Ochoa_Frontend-Developer.pdf`
       >
         <IconFile width="30" height="30" />
-        Descarga CV
+        {i18n.BUTTONS.CV}
       </a>
     </div>
   </section>

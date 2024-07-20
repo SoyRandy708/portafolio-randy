@@ -5,6 +5,9 @@ import IconTailwind from "@/Icons/IconTailwind.astro";
 import IconJS from "@/Icons/IconJS.astro";
 import IconReact from "@/Icons/IconReact.astro";
 import IconAstro from './Icons/IconAstro.astro';
+import { getI18N } from "@/i18n";
+
+const i18n = getI18N('es');
 
 export const TODAS_TECNOLOGIAS = ["HTML", "CSS", "Sass", "Tailwind", "JavaScript", "React", "Astro"]
 
@@ -24,7 +27,7 @@ export const GITHUB_URL = 'https://github.com/SoyRandy708'
 export const PROYECTOS = [
   {
     "titulo": "Monkey Type",
-    "descripcion": "Clon del sitio web Monkey Type para poder practicar la velocidad y precisión al escribir, proporcionando métricas de rendimiento como palabras por minuto (WPM) y precisión.",
+    "descripcion": i18n.PROJECTS.PROJECT_1,
     "tecnologias": [
       "Astro",
       "CSS",
@@ -36,7 +39,7 @@ export const PROYECTOS = [
   },
   {
     "titulo": "ToDo List",
-    "descripcion": "Sitio web para poder crear, modificar, eliminar y guardar tus tareas que tienes pendientes, con la opcion de poder filtrarlos por progreso, o por su nombre.",
+    "descripcion": i18n.PROJECTS.PROJECT_2,
     "tecnologias": [
       "React",
       "Sass"
@@ -46,7 +49,7 @@ export const PROYECTOS = [
   },
   {
     "titulo": "Formulario con Validaciones",
-    "descripcion": "Formulario sencillo en el que se hacen validaciones para saber si se estan ingresando correctamente los datos de que se piden.",
+    "descripcion": i18n.PROJECTS.PROJECT_3,
     "tecnologias": [
       "HTML",
       "CSS",
