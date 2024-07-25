@@ -6,10 +6,11 @@ interface Props {
 const { title } = Astro.props;
 
 import Navbar from "../components/Navbar.astro";
+const { currentLocale } = Astro;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={currentLocale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />

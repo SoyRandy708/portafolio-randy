@@ -5,9 +5,6 @@ import IconTailwind from "@/Icons/IconTailwind.astro";
 import IconJS from "@/Icons/IconJS.astro";
 import IconReact from "@/Icons/IconReact.astro";
 import IconAstro from './Icons/IconAstro.astro';
-import { getI18N } from "@/i18n";
-
-const i18n = getI18N('es');
 
 export const TODAS_TECNOLOGIAS = ["HTML", "CSS", "Sass", "Tailwind", "JavaScript", "React", "Astro"]
 
@@ -27,7 +24,7 @@ export const GITHUB_URL = 'https://github.com/SoyRandy708'
 export const PROYECTOS = [
   {
     "titulo": "Monkey Type",
-    "descripcion": i18n.PROJECTS.PROJECT_1,
+    "descripcion": "MonkeyType",
     "tecnologias": [
       "Astro",
       "CSS",
@@ -39,7 +36,7 @@ export const PROYECTOS = [
   },
   {
     "titulo": "ToDo List",
-    "descripcion": i18n.PROJECTS.PROJECT_2,
+    "descripcion": "ToDoList",
     "tecnologias": [
       "React",
       "Sass"
@@ -49,7 +46,7 @@ export const PROYECTOS = [
   },
   {
     "titulo": "Formulario con Validaciones",
-    "descripcion": i18n.PROJECTS.PROJECT_3,
+    "descripcion": "FormularioValidaciones",
     "tecnologias": [
       "HTML",
       "CSS",

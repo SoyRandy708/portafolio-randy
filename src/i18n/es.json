@@ -7,9 +7,9 @@
   "HEADER": {},
   "PROJECTS": {
     "TITLE": "PROYECTOS",
-    "PROJECT_1": "Clon del sitio web Monkey Type para poder practicar la velocidad y precisión al escribir, proporcionando métricas de rendimiento como palabras por minuto (WPM) y precisión.",
-    "PROJECT_2": "Sitio web para poder crear, modificar, eliminar y guardar tus tareas que tienes pendientes, con la opcion de poder filtrarlos por progreso, o por su nombre.",
-    "PROJECT_3": "Formulario sencillo en el que se hacen validaciones para saber si se estan ingresando correctamente los datos de que se piden."
+    "MonkeyType": "Clon del sitio web Monkey Type para poder practicar la velocidad y precisión al escribir, proporcionando métricas de rendimiento como palabras por minuto (WPM) y precisión.",
+    "ToDoList": "Sitio web para poder crear, modificar, eliminar y guardar tus tareas que tienes pendientes, con la opcion de poder filtrarlos por progreso, o por su nombre.",
+    "FormularioValidaciones": "Formulario sencillo en el que se hacen validaciones para saber si se estan ingresando correctamente los datos de que se piden."
   },
   "TECHNOLOGIES": {
     "TITLE": "TECNOLOGIAS"

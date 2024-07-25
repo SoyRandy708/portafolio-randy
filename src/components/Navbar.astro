@@ -1,7 +1,8 @@
 ---
 import IconMenu from "@/Icons/IconMenu.astro";
 import IconClose from "@/Icons/IconClose.astro";
-import { getI18N } from "@/i18n";
+import IconShow from "@/Icons/IconShow.astro";
+import { getI18N, LANGUAGES } from "@/i18n";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
@@ -9,7 +10,38 @@ const i18n = getI18N({ currentLocale });
 
 <nav>
   <div class="nav-mobile">
-    <a href="#Inicio" class="boton-uno">Randy</a>
+    <ul class="idiomas boton-uno">
+      {
+        Object.values(LANGUAGES).map(({ code, flag, name }) => {
+          const Bandera = flag;
+
+          return code === currentLocale ? (
+            <li>
+              <a href={`/${code}/`}>
+                <Bandera width="20" height="20" />
+                {name}
+                <IconShow class="icon" width="20" height="20" />
+              </a>
+            </li>
+          ) : null;
+        })
+      }
+
+      {
+        Object.values(LANGUAGES).map(({ code, flag, name }) => {
+          const Bandera = flag;
+
+          return code !== currentLocale ? (
+            <li>
+              <a href={`/${code}/`}>
+                <Bandera width="20" height="20" />
+                {name}
+              </a>
+            </li>
+          ) : null;
+        })
+      }
+    </ul>
 
     <div class="iconos">
       <div class="icon">
@@ -64,6 +96,54 @@ const i18n = getI18N({ currentLocale });
     justify-content: space-between;
   }
 
+  .idiomas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    z-index: 20;
+    padding: 0 16px;
+    margin: 0;
+
+    @media (width < 600px) {
+      padding: 0;
+    }
+
+    li:first-child {
+      z-index: 20;
+
+      .icon {
+        transition: transform 0.3s ease;
+      }
+    }
+
+    &:hover li:last-child {
+      transform: translateY(40px);
+    }
+
+    &:hover li:first-child .icon {
+      transform: rotate(-180deg);
+    }
+
+    li:last-child {
+      position: absolute;
+      z-index: 1;
+      transform: translateY(0px);
+      transition: transform 0.3s ease;
+      padding: 0;
+      margin: auto;
+    }
+
+    li {
+      width: 140px;
+
+      a {
+        opacity: 1;
+      }
+    }
+  }
+
   .iconos {
     display: flex;
     justify-content: end;
@@ -113,7 +193,7 @@ const i18n = getI18N({ currentLocale });
 <script>
   const nav = document.querySelector("nav");
   const menu = document.querySelector(".menu");
-  const buttons = document.querySelectorAll(".icon");
+  const buttons = document.querySelectorAll(".iconos .icon");
   const menuItems = document.querySelectorAll(".menu li");
 
   let isMenuOpen = false;

@@ -25,7 +25,7 @@ const i18n = getI18N({ currentLocale });
 
             <div class="informacion">
               <h3> {titulo} </h3>
-              <p> {descripcion} </p>
+              <p> {i18n.PROJECTS[descripcion]} </p>
 
               <div class="tecnologias">
                 {tecnologias.map((tecnologia) => {
@@ -78,6 +78,7 @@ const i18n = getI18N({ currentLocale });
     display: flex;
     flex-direction: column;
     max-width: 600px;
+    margin: auto;
     overflow: hidden;
     border-top: var(--texto-color) 10px solid;
     border-radius: 12px;
