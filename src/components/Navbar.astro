@@ -17,7 +17,7 @@ const i18n = getI18N({ currentLocale });
 
           return code === currentLocale ? (
             <li>
-              <a href={`/${code}/`}>
+              <a>
                 <Bandera width="20" height="20" />
                 {name}
                 <IconShow class="icon" width="20" height="20" />
@@ -55,7 +55,7 @@ const i18n = getI18N({ currentLocale });
 
   <ul class="menu mobile boton-uno">
     {
-      Object.values(i18n.NAVBAR).map((item) => {
+      Object.values(i18n.SECTION_NAVBAR).map((item) => {
         return (
           <li>
             <a href={`#${item}`}> {item} </a>

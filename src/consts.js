@@ -23,8 +23,7 @@ export const GITHUB_URL = 'https://github.com/SoyRandy708'
 
 export const PROYECTOS = [
   {
-    "titulo": "Monkey Type",
-    "descripcion": "MonkeyType",
+    "titulo": "MonkeyType",
     "tecnologias": [
       "Astro",
       "CSS",
@@ -35,8 +34,7 @@ export const PROYECTOS = [
     "imagen": `${IMAGE_URL}/monkeytype_mockup.webp`
   },
   {
-    "titulo": "ToDo List",
-    "descripcion": "ToDoList",
+    "titulo": "ToDoList",
     "tecnologias": [
       "React",
       "Sass"
@@ -45,8 +43,7 @@ export const PROYECTOS = [
     "imagen": `${IMAGE_URL}/todolist_mockup.webp`
   },
   {
-    "titulo": "Formulario con Validaciones",
-    "descripcion": "FormularioValidaciones",
+    "titulo": "FormularioValidaciones",
     "tecnologias": [
       "HTML",
       "CSS",

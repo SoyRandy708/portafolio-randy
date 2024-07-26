@@ -10,55 +10,53 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<section id={i18n.NAVBAR.PROJECTS}>
+<section id={i18n.SECTION_NAVBAR.PROJECTS}>
   <h2>
     <IconCode width="40" height="40" />
-    {i18n.PROJECTS.TITLE}
+    {i18n.SECTION_PROJECTS.TITLE}
   </h2>
 
   <div class="proyectos">
     {
-      PROYECTOS.map(
-        ({ titulo, descripcion, tecnologias, github, web, imagen }) => (
-          <article class="proyecto">
-            <img src={imagen} alt={titulo} />
+      PROYECTOS.map(({ titulo, tecnologias, github, web, imagen }) => (
+        <article class="proyecto">
+          <img src={imagen} alt={titulo} />
 
-            <div class="informacion">
-              <h3> {titulo} </h3>
-              <p> {i18n.PROJECTS[descripcion]} </p>
+          <div class="informacion">
+            <h3> {i18n.SECTION_PROJECTS.PROJECTS[titulo].TITLE} </h3>
+            <p> {i18n.SECTION_PROJECTS.PROJECTS[titulo].DESCRIPTION} </p>
 
-              <div class="tecnologias">
-                {tecnologias.map((tecnologia) => {
-                  const Icon = TECNOLOGIAS_ICONOS[tecnologia];
+            <div class="tecnologias">
+              {tecnologias.map((tecnologia) => {
+                const Icon = TECNOLOGIAS_ICONOS[tecnologia];
 
-                  return (
-                    <div class="icon-container">
-                      <Icon class="icon" width="50" height="50" />
-                      <span> {tecnologia} </span>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div class="botones boton-uno">
-                {github && (
-                  <a href={github} target="_blank">
-                    <IconGithub width="25" height="25" />
-                    {i18n.BUTTONS.GITHUB}
-                  </a>
-                )}
-
-                {web && (
-                  <a href={web} target="_blank">
-                    <IconWorld width="30" height="30" />
-                    {i18n.BUTTONS.WEB}
-                  </a>
-                )}
-              </div>
+                return (
+                  <div class="icon-container">
+                    <Icon class="icon" width="50" height="50" />
+                    <span> {tecnologia} </span>
+                  </div>
+                );
+              })}
             </div>
-          </article>
-        ),
-      )
+
+            <div class="botones boton-uno">
+              {github && (
+                <a href={github} target="_blank">
+                  <IconGithub width="25" height="25" />
+                  {i18n.SECTION_BUTTONS.GITHUB}
+                </a>
+              )}
+
+              {web && (
+                <a href={web} target="_blank">
+                  <IconWorld width="30" height="30" />
+                  {i18n.SECTION_BUTTONS.WEB}
+                </a>
+              )}
+            </div>
+          </div>
+        </article>
+      ))
     }
   </div>
 </section>

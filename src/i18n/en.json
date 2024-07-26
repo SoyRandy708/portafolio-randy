@@ -1,24 +1,35 @@
 {
-  "NAVBAR": {
+  "SECTION_NAVBAR": {
     "HOME": "Home",
     "PROJECTS": "Projects",
     "CONTACT": "Contact"
   },
-  "HEADER": {},
-  "PROJECTS": {
+  "SECTION_HEADER": {},
+  "SECTION_PROJECTS": {
     "TITLE": "PROJECTS",
-    "MonkeyType": "Clone of the Monkey Type website to practice typing speed and accuracy, providing performance metrics such as words per minute (WPM) and accuracy.",
-    "ToDoList": "Website to create, modify, delete and save your pending tasks, with the option to filter them by progress, or by name.",
-    "FormularioValidaciones": "Simple form in which validations are made to know if the requested data are being entered correctly."
+    "PROJECTS": {
+      "MonkeyType": {
+        "TITLE": "Monkey Type",
+        "DESCRIPTION": "Clone of the Monkey Type website to practice typing speed and accuracy, providing performance metrics such as words per minute (WPM) and accuracy."
+      },
+      "ToDoList": {
+        "TITLE": "ToDo List",
+        "DESCRIPTION": "Website to create, modify, delete and save your pending tasks, with the option to filter them by progress, or by name."
+      },
+      "FormularioValidaciones": {
+        "TITLE": "Form With Validations",
+        "DESCRIPTION": "Simple form in which validations are made to know if the requested data are being entered correctly."
+      }
+    }
   },
-  "TECHNOLOGIES": {
+  "SECTION_TECHNOLOGIES": {
     "TITLE": "TECHNOLOGIES"
   },
-  "CONTACT": {
+  "SECTION_CONTACT": {
     "TITLE": "CONTACT",
     "TEXT": "Hi! If you liked my portfolio and want to contact me to work together on projects or develop an idea, feel free to write me through the following means."
   },
-  "BUTTONS": {
+  "SECTION_BUTTONS": {
     "GITHUB": "GitHub",
     "LINKEDIN": "LinkedIn",
     "CV": "CV",

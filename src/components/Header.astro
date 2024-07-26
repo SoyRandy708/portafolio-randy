@@ -9,7 +9,7 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<header id={i18n.NAVBAR.HOME}>
+<header id={i18n.SECTION_NAVBAR.HOME}>
   <section>
     <h1>
       Randy Ochoa Nuñez
@@ -19,12 +19,12 @@ const i18n = getI18N({ currentLocale });
     <div class="botones boton-dos">
       <a target="_blank" href="https://github.com/SoyRandy708">
         <IconGithub width="25" height="25" />
-        {i18n.BUTTONS.GITHUB}
+        {i18n.SECTION_BUTTONS.GITHUB}
       </a>
 
       <a target="_blank" href="https://www.linkedin.com/in/randy-ochoa/">
         <IconLinkedin width="30" height="30" />
-        {i18n.BUTTONS.LINKEDIN}
+        {i18n.SECTION_BUTTONS.LINKEDIN}
       </a>
 
       <a
@@ -33,7 +33,7 @@ const i18n = getI18N({ currentLocale });
         href=`${IMAGE_URL}/CV_Randy-Ochoa_Frontend-Developer.pdf`
       >
         <IconFile width="30" height="30" />
-        {i18n.BUTTONS.CV}
+        {i18n.SECTION_BUTTONS.CV}
       </a>
     </div>
   </section>

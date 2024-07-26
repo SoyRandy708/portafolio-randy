@@ -10,27 +10,27 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<footer id={i18n.NAVBAR.CONTACT}>
+<footer id={i18n.SECTION_NAVBAR.CONTACT}>
   <article>
     <h2>
       <IconContact width="40" height="40" />
-      {i18n.CONTACT.TITLE}
+      {i18n.SECTION_CONTACT.TITLE}
     </h2>
 
     <div>
       <p>
-        {i18n.CONTACT.TEXT}
+        {i18n.SECTION_CONTACT.TEXT}
       </p>
 
       <div class="botones boton-uno">
         <a target="_blank" href="https://github.com/SoyRandy708">
           <IconGithub width="25" height="25" />
-          {i18n.BUTTONS.GITHUB}
+          {i18n.SECTION_BUTTONS.GITHUB}
         </a>
 
         <a target="_blank" href="https://www.linkedin.com/in/randy-ochoa/">
           <IconLinkedin width="30" height="30" />
-          {i18n.BUTTONS.LINKEDIN}
+          {i18n.SECTION_BUTTONS.LINKEDIN}
         </a>
 
         <a
@@ -39,7 +39,7 @@ const i18n = getI18N({ currentLocale });
           href=`${IMAGE_URL}/CV_Randy-Ochoa_Frontend-Developer.pdf`
         >
           <IconFile width="30" height="30" />
-          {i18n.BUTTONS.CV}
+          {i18n.SECTION_BUTTONS.CV}
         </a>
       </div>
     </div>

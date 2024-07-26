@@ -1,24 +1,35 @@
 {
-  "NAVBAR": {
+  "SECTION_NAVBAR": {
     "HOME": "Inicio",
     "PROJECTS": "Proyectos",
     "CONTACT": "Contacto"
   },
-  "HEADER": {},
-  "PROJECTS": {
+  "SECTION_HEADER": {},
+  "SECTION_PROJECTS": {
     "TITLE": "PROYECTOS",
-    "MonkeyType": "Clon del sitio web Monkey Type para poder practicar la velocidad y precisión al escribir, proporcionando métricas de rendimiento como palabras por minuto (WPM) y precisión.",
-    "ToDoList": "Sitio web para poder crear, modificar, eliminar y guardar tus tareas que tienes pendientes, con la opcion de poder filtrarlos por progreso, o por su nombre.",
-    "FormularioValidaciones": "Formulario sencillo en el que se hacen validaciones para saber si se estan ingresando correctamente los datos de que se piden."
+    "PROJECTS": {
+      "MonkeyType": {
+        "TITLE": "Monkey Type",
+        "DESCRIPTION": "Clon del sitio web Monkey Type para poder practicar la velocidad y precisión al escribir, proporcionando métricas de rendimiento como palabras por minuto (WPM) y precisión."
+      },
+      "ToDoList": {
+        "TITLE": "ToDo List",
+        "DESCRIPTION": "Sitio web para poder crear, modificar, eliminar y guardar tus tareas que tienes pendientes, con la opcion de poder filtrarlos por progreso, o por su nombre."
+      },
+      "FormularioValidaciones": {
+        "TITLE": "Formulario Con Validaciones",
+        "DESCRIPTION": "Formulario sencillo en el que se hacen validaciones para saber si se estan ingresando correctamente los datos de que se piden."
+      }
+    }
   },
-  "TECHNOLOGIES": {
+  "SECTION_TECHNOLOGIES": {
     "TITLE": "TECNOLOGIAS"
   },
-  "CONTACT": {
+  "SECTION_CONTACT": {
     "TITLE": "CONTACTO",
     "TEXT": "¡Hola! Si te gustó mi portafolio y quieres contactarme para trabajar juntos en proyectos o desarrollar alguna idea, no dudes en escribirme a través de los siguientes medios."
   },
-  "BUTTONS": {
+  "SECTION_BUTTONS": {
     "GITHUB": "GitHub",
     "LINKEDIN": "LinkedIn",
     "CV": "CV",
