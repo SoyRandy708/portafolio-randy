@@ -6,13 +6,11 @@ import BanderaEnglish from '@/Icons/IconBanderaEn.astro';
 export const LANGUAGES = {
   en: {
     code: 'en',
-    link: '',
     name: 'English',
     flag: BanderaEnglish,
   },
   es: {
     code: 'es',
-    link: 'es',
     name: 'Español',
     flag: BanderaEspañol,
   },
