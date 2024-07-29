@@ -1,0 +1,24 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="Pagina no encontrada">
+  <main>
+    <h1>Pagina no encontrada</h1>
+    <p>Parece que esta pagina no existe</p>
+    <a href="/" class="boton-dos">Volver a inicio</a>
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  h1 {
+    color: var(--texto-color);
+  }
+</style>

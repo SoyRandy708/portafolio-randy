@@ -28,12 +28,12 @@ const i18n = getI18N({ currentLocale });
       }
 
       {
-        Object.values(LANGUAGES).map(({ code, flag, name }) => {
+        Object.values(LANGUAGES).map(({ code, link, flag, name }) => {
           const Bandera = flag;
 
           return code !== currentLocale ? (
             <li>
-              <a href={`/${code}/`}>
+              <a href={`/${link}/`}>
                 <Bandera width="20" height="20" />
                 {name}
               </a>
