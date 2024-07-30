@@ -23,9 +23,10 @@ const { currentLocale } = Astro;
 
 <style is:global>
   :root {
-    --color-primario: #00e9a7;
-    --background-color: #2f3232;
-    --texto-color: #f0f0f0;
+    --color-primario: #14b5c6;
+    --color-secundario: #177587;
+    --background-color: #171717;
+    --texto-color: #e3fdfd;
   }
 
   * {
@@ -73,21 +74,17 @@ const { currentLocale } = Astro;
 
   .boton-uno a,
   a.boton-uno {
-    background-color: var(--background-color);
-    color: var(--color-primario);
+    /* background: linear-gradient(45deg, red, blue); */
+    /* background-color: var(--background-color); */
+    background: linear-gradient(
+      45deg,
+      var(--color-secundario),
+      var(--background-color)
+    );
+    color: var(--texto-color);
 
     path {
-      color: var(--color-primario);
-    }
-  }
-
-  .boton-dos a,
-  a.boton-dos {
-    background-color: var(--color-primario);
-    color: var(--background-color);
-
-    path {
-      color: var(--background-color);
+      color: var(--texto-color);
     }
   }
 
