@@ -1,0 +1,51 @@
+---
+import IconFile from "@/Icons/IconFile.astro";
+import IconGithub from "@/Icons/IconGithub.astro";
+import IconLinkedin from "@/Icons/IconLinkedin.astro";
+import { IMAGE_URL } from "@/consts";
+import { getI18N } from "@/i18n";
+
+const { clase } = Astro.props;
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<article class=`${clase} boton-uno`>
+  <a target="_blank" href="https://github.com/SoyRandy708">
+    <IconGithub width="25" height="25" />
+    {i18n.SECTION_BUTTONS.GITHUB}
+  </a>
+
+  <a target="_blank" href="https://www.linkedin.com/in/randy-ochoa/">
+    <IconLinkedin width="30" height="30" />
+    {i18n.SECTION_BUTTONS.LINKEDIN}
+  </a>
+
+  <a
+    target="_blank"
+    download
+    href=`${IMAGE_URL}/CV_Randy-Ochoa_Frontend-Developer.pdf`
+  >
+    <IconFile width="30" height="30" />
+    {i18n.SECTION_BUTTONS.CV}
+  </a>
+</article>
+
+<style>
+  .botones-uno {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (width > 600px) {
+      flex-direction: row;
+    }
+  }
+
+  .botones-dos {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+</style>

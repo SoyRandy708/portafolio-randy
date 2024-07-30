@@ -1,9 +1,6 @@
 ---
 import IconContact from "@/Icons/IconContact.astro";
-import IconFile from "@/Icons/IconFile.astro";
-import IconGithub from "@/Icons/IconGithub.astro";
-import IconLinkedin from "@/Icons/IconLinkedin.astro";
-import { IMAGE_URL } from "@/consts";
+import BotonesContacto from "./BotonesContacto.astro";
 import { getI18N } from "@/i18n";
 
 const { currentLocale } = Astro;
@@ -22,26 +19,7 @@ const i18n = getI18N({ currentLocale });
         {i18n.SECTION_CONTACT.TEXT}
       </p>
 
-      <div class="botones boton-uno">
-        <a target="_blank" href="https://github.com/SoyRandy708">
-          <IconGithub width="25" height="25" />
-          {i18n.SECTION_BUTTONS.GITHUB}
-        </a>
-
-        <a target="_blank" href="https://www.linkedin.com/in/randy-ochoa/">
-          <IconLinkedin width="30" height="30" />
-          {i18n.SECTION_BUTTONS.LINKEDIN}
-        </a>
-
-        <a
-          target="_blank"
-          download
-          href=`${IMAGE_URL}/CV_Randy-Ochoa_Frontend-Developer.pdf`
-        >
-          <IconFile width="30" height="30" />
-          {i18n.SECTION_BUTTONS.CV}
-        </a>
-      </div>
+      <BotonesContacto clase="botones-dos" />
     </div>
   </article>
 </footer>
@@ -86,11 +64,5 @@ const i18n = getI18N({ currentLocale });
     path {
       color: var(--background-color);
     }
-  }
-
-  .botones {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
   }
 </style>

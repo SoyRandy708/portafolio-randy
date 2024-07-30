@@ -29,6 +29,11 @@
     "TITLE": "CONTACT",
     "TEXT": "Hi! If you liked my portfolio and want to contact me to work together on projects or develop an idea, feel free to write me through the following means."
   },
+  "SECTION_404": {
+    "TITLE": "Page not found",
+    "TEXT": "It seems that the page you were looking for does not exist, you can go back to home or contact me on my social networks:",
+    "BUTTON_TEXT": "Back to Home"
+  },
   "SECTION_BUTTONS": {
     "GITHUB": "GitHub",
     "LINKEDIN": "LinkedIn",

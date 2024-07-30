@@ -29,6 +29,11 @@
     "TITLE": "CONTACTO",
     "TEXT": "¡Hola! Si te gustó mi portafolio y quieres contactarme para trabajar juntos en proyectos o desarrollar alguna idea, no dudes en escribirme a través de los siguientes medios."
   },
+  "SECTION_404": {
+    "TITLE": "Pagina no encontrada",
+    "TEXT": "Parece que la pagina que buscaste no existe, puedes volver al inicio o contactarme en mis redes sociales:",
+    "BUTTON_TEXT": "Volver a Inicio"
+  },
   "SECTION_BUTTONS": {
     "GITHUB": "GitHub",
     "LINKEDIN": "LinkedIn",

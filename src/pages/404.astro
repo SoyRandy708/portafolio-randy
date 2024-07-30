@@ -1,12 +1,26 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import { getI18N } from "@/i18n";
+import BotonesContacto from "@/components/BotonesContacto.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
-<Layout title="Pagina no encontrada">
+<Layout title={i18n.SECTION_404.TITLE}>
   <main>
-    <h1>Pagina no encontrada</h1>
-    <p>Parece que esta pagina no existe</p>
-    <a href="/" class="boton-uno">Volver a inicio</a>
+    <h1>{i18n.SECTION_404.TITLE}</h1>
+
+    <article>
+      <p>
+        {i18n.SECTION_404.TEXT}
+      </p>
+      <BotonesContacto clase="botones-dos" />
+    </article>
+
+    <a href={currentLocale === "en" ? "/" : "/es/"} class="boton-uno">
+      {i18n.SECTION_404.BUTTON_TEXT}
+    </a>
   </main>
 </Layout>
 
@@ -17,8 +31,19 @@ import Layout from "@/layouts/Layout.astro";
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+
+    h1 {
+      margin: 0;
+      color: var(--texto-color);
+    }
   }
-  h1 {
-    color: var(--texto-color);
+
+  article {
+    margin: 50px 0;
+
+    p {
+      width: 40ch;
+      text-align: center;
+    }
   }
 </style>
