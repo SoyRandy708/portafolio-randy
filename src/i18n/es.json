@@ -1,4 +1,8 @@
 {
+  "HEADERS": {
+    "TITLE": "Portafolio de Randy - Frontend Developer",
+    "DESCRIPTION": "Portafolio de Randy, Frontend Developer especializado en la creación de interfaces de usuario atractivas y funcionales. Con habilidades en HTML, CSS, Sass, Tailwind, JavaScript, React, Astro, entre otras tecnologías. Disponible para colaboraciones y proyectos freelance."
+  },
   "SECTION_NAVBAR": {
     "HOME": "Inicio",
     "PROJECTS": "Proyectos",

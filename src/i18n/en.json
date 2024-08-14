@@ -1,4 +1,8 @@
 {
+  "HEADERS": {
+    "TITLE": "Randy's Portfolio - Frontend Developer",   
+    "DESCRIPTION": "Randy's portfolio: Frontend Developer specialized in creating attractive and functional user interfaces. Proficient in HTML, CSS, Sass, Tailwind, JavaScript, React, Astro, among other technologies. Available for collaborations and freelance projects."
+  },
   "SECTION_NAVBAR": {
     "HOME": "Home",
     "PROJECTS": "Projects",
