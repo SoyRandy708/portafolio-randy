@@ -33,7 +33,7 @@ const i18n = getI18N({ currentLocale });
                 return (
                   <div class="icon-container">
                     <Icon class="icon" width="50" height="50" />
-                    <span> {tecnologia} </span>
+                    <span class="tooltip"> {tecnologia} </span>
                   </div>
                 );
               })}
@@ -78,10 +78,9 @@ const i18n = getI18N({ currentLocale });
     max-width: 600px;
     margin: auto;
     overflow: hidden;
-    border-top: var(--texto-color) 10px solid;
+    border: var(--color-primario) 3px solid;
     border-radius: 12px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-    background-color: var(--color-primario);
     animation-timeline: view();
     animation-name: mostrar;
     animation-fill-mode: both;
@@ -103,21 +102,24 @@ const i18n = getI18N({ currentLocale });
   }
 
   .informacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 16px;
 
     h3 {
       font-size: 30px;
       font-weight: 900;
       line-height: 1;
-      color: var(--background-color);
+      color: var(--texto-color);
       padding: 10px;
       margin: 0;
-      border-bottom: var(--background-color) 2px solid;
+      border-bottom: var(--texto-color) 2px solid;
     }
 
     p {
       margin: 20px 0;
-      color: var(--background-color);
+      color: var(--texto-color);
       line-height: 1.5;
     }
   }
@@ -142,19 +144,19 @@ const i18n = getI18N({ currentLocale });
       transform: scale(1.1);
     }
 
-    .icon-container:hover span {
+    .icon-container:hover .tooltip {
       opacity: 1;
       transform: translateY(-50px);
     }
 
-    span {
+    .tooltip {
       position: absolute;
       transform: translateY(-30px);
       opacity: 0;
       font-weight: 700;
       text-align: center;
-      background-color: var(--background-color);
-      color: var(--color-primario);
+      background-color: var(--color-primario);
+      color: var(--background-color);
       border-radius: 4px;
       padding: 4px 8px;
       transition:
