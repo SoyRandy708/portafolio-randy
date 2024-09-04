@@ -8,19 +8,17 @@ const i18n = getI18N({ currentLocale });
 ---
 
 <footer id={i18n.SECTION_NAVBAR.CONTACT}>
-  <article>
-    <h2>
-      <IconContact width="40" height="40" />
-      {i18n.SECTION_CONTACT.TITLE}
-    </h2>
+  <h2>
+    <IconContact width="40" height="40" />
+    {i18n.SECTION_CONTACT.TITLE}
+  </h2>
 
-    <div class="informacion">
-      <p>
-        {i18n.SECTION_CONTACT.TEXT}
-      </p>
+  <article class="informacion">
+    <p>
+      {i18n.SECTION_CONTACT.TEXT}
+    </p>
 
-      <BotonesContacto clase="botones-dos" />
-    </div>
+    <BotonesContacto clase="botones-dos" />
   </article>
 </footer>
 
@@ -36,33 +34,32 @@ const i18n = getI18N({ currentLocale });
     min-height: 100vh;
   }
 
-  article {
-    background-color: var(--color-primario);
+  .informacion {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
     padding: 20px;
-    border-radius: 20px;
+    border: 3px solid var(--color-primario);
+    border-radius: 12px;
 
-    .informacion {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 50px;
+    @media (width < 600px) {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
 
-      @media (width < 600px) {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      p {
-        font-weight: 500;
-        line-height: 1.5;
-      }
+    p {
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--texto-color);
+      max-width: 65ch;
     }
   }
 
   h2 {
-    color: var(--background-color);
+    color: var(--texto-color);
 
     path {
-      color: var(--background-color);
+      color: var(--texto-color);
     }
   }
 </style>

@@ -7,14 +7,23 @@ const i18n = getI18N({ currentLocale });
 ---
 
 <header id={i18n.SECTION_NAVBAR.HOME}>
-  <section>
+  <article>
+    <img
+      src="https://images.pexels.com/photos/19936041/pexels-photo-19936041/free-photo-of-mujer-pared-muro-modelo.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+      alt="Foto de Randy Ochoa"
+    />
+    <BotonesContacto clase="botones-dos" />
+  </article>
+
+  <div class="informacion">
     <h1>
       Randy Ochoa Nuñez
       <span> Frontend Developer</span>
     </h1>
 
-    <BotonesContacto clase="botones-uno" />
-  </section>
+    <p set:html={i18n.SECTION_HEADER.PARAGRAPH_1} />
+    <p set:html={i18n.SECTION_HEADER.PARAGRAPH_2} />
+  </div>
 </header>
 
 <style>
@@ -22,22 +31,64 @@ const i18n = getI18N({ currentLocale });
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-  }
-
-  section {
-    display: flex;
-    flex-direction: column;
+    min-height: 85vh;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
     gap: 24px;
+    padding-top: 15vh;
 
-    h1 {
-      display: flex;
-      flex-direction: column;
-      font-size: 40px;
-      font-weight: bold;
+    @media (width < 600px) {
+      grid-template-columns: 1fr;
+    }
 
-      span {
-        font-size: 30px;
+    & > article {
+      display: grid;
+      border: 3px solid var(--color-primario);
+      border-radius: 12px;
+      overflow: hidden;
+
+      @media (width < 600px) {
+        max-width: 400px;
+        place-self: center;
+      }
+
+      img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+      }
+
+      article {
+        padding: 20px;
+      }
+    }
+
+    .informacion {
+      h1 {
+        display: flex;
+        flex-direction: column;
+        font-size: 40px;
+        font-weight: bold;
+
+        @media (width < 700px) {
+          font-size: 32px;
+        }
+
+        span {
+          font-size: 32px;
+
+          @media (width < 700px) {
+            font-size: 24px;
+          }
+        }
+      }
+
+      p {
+        line-height: 1.5;
+
+        strong {
+          color: var(--color-primario);
+        }
       }
     }
   }
