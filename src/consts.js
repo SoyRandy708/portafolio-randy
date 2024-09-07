@@ -8,6 +8,8 @@ import IconAstro from './Icons/IconAstro.astro';
 import IconGit from './Icons/IconGit.astro';
 import IconVsCode from './Icons/IconVsCode.astro';
 import IconVercel from './Icons/IconVercel.astro';
+import IconGithub from './Icons/IconGithub.astro';
+import IconTS from './Icons/IconTS.astro';
 
 export const IMAGE_URL = 'https://pub-3eddb542161c48299037aa5299510c01.r2.dev'
 export const GITHUB_URL = 'https://github.com/SoyRandy708'
@@ -39,6 +41,11 @@ export const TODAS_TECNOLOGIAS = [
     color: "#F0DB4F",
   },
   {
+    nombre: "TypeScript",
+    icono: "TypeScript",
+    color: "#3078c6",
+  },
+  {
     nombre: "React",
     icono: "React",
     color: "#61DAFB",
@@ -52,6 +59,11 @@ export const TODAS_TECNOLOGIAS = [
     nombre: "Git",
     icono: "Git",
     color: "#de4b36",
+  },
+  {
+    nombre: "GitHub",
+    icono: "GitHub",
+    color: "#fff",
   },
   {
     nombre: "Visual Studio Code",
@@ -71,9 +83,11 @@ export const TECNOLOGIAS_ICONOS = {
   Sass: IconSass,
   Tailwind: IconTailwind,
   JavaScript: IconJS,
+  TypeScript: IconTS,
   React: IconReact,
   Astro: IconAstro,
   Git: IconGit,
+  GitHub: IconGithub,
   VsCode: IconVsCode,
   Vercel: IconVercel,
 };
@@ -84,7 +98,10 @@ export const PROYECTOS = [
     "tecnologias": [
       "Astro",
       "CSS",
-      "JavaScript"
+      "JavaScript",
+      "Git",
+      "GitHub",
+      "Vercel",
     ],
     "github": `${GITHUB_URL}/monkeytype`,
     "web": "https://monkeytype-randy.vercel.app/",
@@ -94,7 +111,9 @@ export const PROYECTOS = [
     "titulo": "ToDoList",
     "tecnologias": [
       "React",
-      "Sass"
+      "Sass",
+      "Git",
+      "GitHub",
     ],
     "github": `${GITHUB_URL}/ToDo-List`,
     "imagen": `${IMAGE_URL}/todolist_mockup.webp`
@@ -104,7 +123,10 @@ export const PROYECTOS = [
     "tecnologias": [
       "HTML",
       "CSS",
-      "JavaScript"
+      "JavaScript",
+      "Git",
+      "GitHub",
+      "Vercel",
     ],
     "github": `${GITHUB_URL}/FormularioConValidaciones`,
     "web": "https://formulario-con-validaciones.vercel.app/",

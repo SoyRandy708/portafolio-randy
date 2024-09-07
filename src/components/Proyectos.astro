@@ -40,7 +40,7 @@ const i18n = getI18N({ currentLocale });
                       "--background-dif": color,
                     }}
                   >
-                    <Icon class="icon" width="50" height="50" />
+                    <Icon class="icon" width="40" height="40" />
                     <span class="tooltip"> {tecnologia} </span>
                   </li>
                 );
@@ -113,16 +113,20 @@ const i18n = getI18N({ currentLocale });
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 16px;
+    padding: 12px;
 
     h3 {
-      font-size: 30px;
+      font-size: 28px;
       font-weight: 900;
       line-height: 1;
       color: var(--texto-color);
       padding: 10px;
       margin: 0;
       border-bottom: var(--texto-color) 2px solid;
+
+      @media (width < 400px) {
+        font-size: 24px;
+      }
     }
 
     p {
@@ -134,8 +138,9 @@ const i18n = getI18N({ currentLocale });
 
   .tecnologias {
     display: flex;
-    gap: 12px;
-    margin: 20px 0;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 12px 0;
     padding: 0;
   }
 
