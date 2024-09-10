@@ -11,12 +11,20 @@ const i18n = getI18N({ currentLocale });
 ---
 
 <article class=`${clase} boton-uno`>
-  <a target="_blank" href="https://github.com/SoyRandy708">
+  <a
+    target="_blank"
+    aria-label="Visit my GitHub"
+    href="https://github.com/SoyRandy708"
+  >
     <IconGithub width="25" height="25" />
     {i18n.SECTION_BUTTONS.GITHUB}
   </a>
 
-  <a target="_blank" href="https://www.linkedin.com/in/randy-ochoa/">
+  <a
+    target="_blank"
+    aria-label="Visit my LinkedIn"
+    href="https://www.linkedin.com/in/randy-ochoa/"
+  >
     <IconLinkedin width="30" height="30" />
     {i18n.SECTION_BUTTONS.LINKEDIN}
   </a>
@@ -24,6 +32,7 @@ const i18n = getI18N({ currentLocale });
   <a
     target="_blank"
     download
+    aria-label="Download my CV"
     href=`${IMAGE_URL}/CV_Randy-Ochoa_Frontend-Developer.pdf`
   >
     <IconFile width="30" height="30" />

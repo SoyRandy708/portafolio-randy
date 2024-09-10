@@ -17,7 +17,10 @@ const i18n = getI18N({ currentLocale });
 
           return code === currentLocale ? (
             <li>
-              <a>
+              <a
+                aria-label="Change Language"
+                href={`${code === "en" ? "/" : `/${code}/`}`}
+              >
                 <Bandera width="20" height="20" />
                 {name}
                 <IconShow class="icon" width="20" height="20" />
@@ -33,7 +36,10 @@ const i18n = getI18N({ currentLocale });
 
           return code !== currentLocale ? (
             <li>
-              <a href={`${code === "en" ? "/" : `/${code}/`}`}>
+              <a
+                href={`${code === "en" ? "/" : `/${code}/`}`}
+                aria-label="Change Language"
+              >
                 <Bandera width="20" height="20" />
                 {name}
               </a>
@@ -58,7 +64,9 @@ const i18n = getI18N({ currentLocale });
       Object.values(i18n.SECTION_NAVBAR).map((item) => {
         return (
           <li>
-            <a href={`#${item}`}> {item} </a>
+            <a href={`#${item}`} aria-label={`Go to ${item}`}>
+              {item}
+            </a>
           </li>
         );
       })
@@ -112,6 +120,7 @@ const i18n = getI18N({ currentLocale });
 
     li:first-child {
       z-index: 20;
+      pointer-events: none;
 
       .icon {
         transition: transform 0.3s ease;

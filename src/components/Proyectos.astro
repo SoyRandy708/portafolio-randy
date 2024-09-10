@@ -49,14 +49,22 @@ const i18n = getI18N({ currentLocale });
 
             <div class="botones boton-uno">
               {github && (
-                <a href={github} target="_blank">
+                <a
+                  href={github}
+                  aria-label="Visit project GitHub"
+                  target="_blank"
+                >
                   <IconGithub width="25" height="25" />
                   {i18n.SECTION_BUTTONS.GITHUB}
                 </a>
               )}
 
               {web && (
-                <a href={web} target="_blank">
+                <a
+                  href={web}
+                  aria-label="Visit project website"
+                  target="_blank"
+                >
                   <IconWorld width="30" height="30" />
                   {i18n.SECTION_BUTTONS.WEB}
                 </a>
@@ -81,8 +89,8 @@ const i18n = getI18N({ currentLocale });
   }
 
   .proyecto {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     max-width: 600px;
     margin: auto;
     overflow: hidden;
@@ -96,16 +104,13 @@ const i18n = getI18N({ currentLocale });
 
     @media (width > 800px) {
       max-width: none;
-      flex-direction: row;
+      grid-template-columns: 1fr 1fr;
     }
 
     img {
       object-fit: cover;
       width: 100%;
-
-      @media (width > 800px) {
-        width: 50%;
-      }
+      height: 100%;
     }
   }
 
