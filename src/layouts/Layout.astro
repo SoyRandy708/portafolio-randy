@@ -55,7 +55,6 @@ const i18n = getI18N({ currentLocale });
   }
 
   * {
-    user-select: none;
     list-style: none;
     font-family: system-ui, sans-serifs;
     color: var(--texto-color);
@@ -92,12 +91,17 @@ const i18n = getI18N({ currentLocale });
     white-space: nowrap;
     padding: 8px 12px;
     border-radius: 8px;
+    border: var(--color-secundario) 2px solid;
     text-decoration: none;
     font-weight: 500;
-    transition: opacity 0.3s ease;
+    transition:
+      opacity 0.3s ease,
+      border 0.3s ease;
+    user-select: none;
 
     &:hover {
       opacity: 0.8;
+      border: var(--texto-color) 2px solid;
     }
   }
 
