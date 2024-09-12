@@ -1,4 +1,5 @@
 ---
+import { IMAGE_URL } from "@/consts";
 import BotonesContacto from "./BotonesContacto.astro";
 import { getI18N } from "@/i18n";
 
@@ -8,10 +9,7 @@ const i18n = getI18N({ currentLocale });
 
 <header id={i18n.SECTION_NAVBAR.HOME}>
   <article>
-    <img
-      src="https://images.pexels.com/photos/19936041/pexels-photo-19936041/free-photo-of-mujer-pared-muro-modelo.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
-      alt="Foto de Randy Ochoa"
-    />
+    <img src=`${IMAGE_URL}/randy.webp` alt="Foto de Randy Ochoa" />
     <BotonesContacto clase="botones-dos" />
   </article>
 
@@ -56,6 +54,7 @@ const i18n = getI18N({ currentLocale });
         width: 100%;
         aspect-ratio: 1 / 1;
         object-fit: cover;
+        object-position: top;
       }
 
       article {
