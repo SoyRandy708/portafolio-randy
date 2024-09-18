@@ -7,7 +7,7 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<section>
+<article>
   <h2>
     <IconTecnologias width="40" height="40" />
     {i18n.SECTION_TECHNOLOGIES.TITLE}
@@ -30,10 +30,10 @@ const i18n = getI18N({ currentLocale });
       })
     }
   </ul>
-</section>
+</article>
 
 <style>
-  section {
+  article {
     padding: 100px 0;
   }
 

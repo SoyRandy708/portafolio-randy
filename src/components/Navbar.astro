@@ -59,7 +59,7 @@ const i18n = getI18N({ currentLocale });
     </div>
   </div>
 
-  <ul class="menu mobile boton-uno">
+  <ul class="menu mobile">
     {
       Object.values(i18n.SECTION_NAVBAR).map((item) => {
         return (
@@ -91,7 +91,7 @@ const i18n = getI18N({ currentLocale });
     z-index: 10;
     padding: 16px 12px;
     box-shadow: 0 0 25px rgb(0 0 0 / 0.15);
-    background-color: var(--color-primario);
+    background-color: var(--color-terciario);
     transition: transform 0.3s ease;
     user-select: none;
 
@@ -163,7 +163,7 @@ const i18n = getI18N({ currentLocale });
     }
 
     path {
-      color: var(--background-color);
+      color: var(--texto-color);
     }
   }
 
@@ -186,6 +186,17 @@ const i18n = getI18N({ currentLocale });
 
     & li a {
       display: block;
+      border: 3px solid transparent;
+      border-radius: 0;
+      padding: 4px;
+
+      &:hover {
+        color: var(--color-primario);
+      }
+
+      &.active {
+        border-bottom: 3px solid var(--color-primario);
+      }
     }
   }
 
@@ -205,9 +216,38 @@ const i18n = getI18N({ currentLocale });
   const menu = document.querySelector(".menu");
   const buttons = document.querySelectorAll(".iconos .icon");
   const menuItems = document.querySelectorAll(".menu li");
+  const sections = document.querySelectorAll("section, footer");
 
   let isMenuOpen = false;
   let lastScrollTop = 0;
+
+  function detectarSection() {
+    const sectionActive = document.querySelector(".section-active");
+
+    sections.forEach((section) => {
+      const { top, bottom } = section.getBoundingClientRect();
+
+      const visiblePart =
+        Math.min(window.innerHeight, bottom) - Math.max(0, top);
+
+      if (visiblePart > window.innerHeight / 2) {
+        section.classList.add("section-active");
+      } else {
+        section.classList.remove("section-active");
+      }
+    });
+
+    menuItems.forEach((item) => {
+      const itemText = item.textContent.trim();
+      const button = item.querySelector("a");
+
+      if (itemText === sectionActive?.id) {
+        button.classList.add("active");
+      } else {
+        button.classList.remove("active");
+      }
+    });
+  }
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -255,4 +295,7 @@ const i18n = getI18N({ currentLocale });
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   });
+
+  document.addEventListener("scroll", detectarSection);
+  detectarSection();
 </script>
