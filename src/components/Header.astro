@@ -52,7 +52,7 @@ const i18n = getI18N({ currentLocale });
     gap: 24px;
     padding-top: 15vh;
 
-    @media (width < 600px) {
+    @media (width <= 600px) {
       grid-template-columns: 1fr;
     }
 
@@ -63,7 +63,7 @@ const i18n = getI18N({ currentLocale });
       overflow: hidden;
       min-width: 250px;
 
-      @media (width < 600px) {
+      @media (width <= 600px) {
         max-width: 400px;
         place-self: center;
       }
@@ -117,14 +117,14 @@ const i18n = getI18N({ currentLocale });
         font-size: 40px;
         font-weight: bold;
 
-        @media (width < 700px) {
+        @media (width <= 700px) {
           font-size: 32px;
         }
 
         span {
           font-size: 32px;
 
-          @media (width < 700px) {
+          @media (width <= 700px) {
             font-size: 24px;
           }
         }

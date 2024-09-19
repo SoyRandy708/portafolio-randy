@@ -51,10 +51,10 @@ const i18n = getI18N({ currentLocale });
 
     <div class="iconos">
       <div class="icon">
-        <IconMenu width="38" height="38" />
+        <IconMenu width="100%" height="100%" />
       </div>
       <div class="icon mobile">
-        <IconClose width="38" height="38" />
+        <IconClose width="100%" height="100%" />
       </div>
     </div>
   </div>
@@ -95,7 +95,7 @@ const i18n = getI18N({ currentLocale });
     transition: transform 0.3s ease;
     user-select: none;
 
-    @media (width > 600px) {
+    @media (width >= 601px) {
       flex-direction: row;
     }
   }
@@ -103,6 +103,7 @@ const i18n = getI18N({ currentLocale });
   .nav-mobile {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   .idiomas {
@@ -115,8 +116,36 @@ const i18n = getI18N({ currentLocale });
     padding: 0 16px;
     margin: 0;
 
-    @media (width < 600px) {
+    @media (width <= 600px) {
       padding: 0;
+    }
+
+    @media (hover: hover) {
+      &:hover li:last-child {
+        transform: translateY(45px);
+      }
+
+      &:hover li:first-child .icon {
+        transform: rotate(-180deg);
+      }
+    }
+
+    @media (hover: none) {
+      .icon {
+        display: none;
+      }
+    }
+
+    li {
+      width: 150px;
+
+      @media (hover: none) {
+        width: 125px;
+      }
+
+      a {
+        opacity: 1;
+      }
     }
 
     li:first-child {
@@ -128,14 +157,6 @@ const i18n = getI18N({ currentLocale });
       }
     }
 
-    &:hover li:last-child {
-      transform: translateY(45px);
-    }
-
-    &:hover li:first-child .icon {
-      transform: rotate(-180deg);
-    }
-
     li:last-child {
       position: absolute;
       z-index: 1;
@@ -144,22 +165,19 @@ const i18n = getI18N({ currentLocale });
       padding: 0;
       margin: auto;
     }
-
-    li {
-      width: 140px;
-
-      a {
-        opacity: 1;
-      }
-    }
   }
 
   .iconos {
     display: flex;
     justify-content: end;
 
-    @media (width > 600px) {
+    @media (width >= 601px) {
       display: none;
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
     }
 
     path {
@@ -176,7 +194,7 @@ const i18n = getI18N({ currentLocale });
     padding: 32px 0px 0px;
     margin: 0;
 
-    @media (width > 600px) {
+    @media (min-width: 601px) {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -201,25 +219,19 @@ const i18n = getI18N({ currentLocale });
   }
 
   .mobile {
-    @media (width < 600px) {
+    @media (width <= 600px) {
       display: none;
     }
-  }
-
-  .ocultar {
-    transform: translateY(-100px);
   }
 </style>
 
 <script>
-  const nav = document.querySelector("nav");
   const menu = document.querySelector(".menu");
   const buttons = document.querySelectorAll(".iconos .icon");
   const menuItems = document.querySelectorAll(".menu li");
   const sections = document.querySelectorAll("section, footer");
 
   let isMenuOpen = false;
-  let lastScrollTop = 0;
 
   function detectarSection() {
     const sectionActive = document.querySelector(".section-active");
@@ -273,27 +285,6 @@ const i18n = getI18N({ currentLocale });
         button.classList.toggle("mobile");
       });
     });
-  });
-
-  window.addEventListener("scroll", () => {
-    let scrollTop = document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop) {
-      nav.classList.add("ocultar");
-
-      if (isMenuOpen) {
-        isMenuOpen = !isMenuOpen;
-
-        menu.classList.add("mobile");
-        buttons.forEach((button) => {
-          button.classList.toggle("mobile");
-        });
-      }
-    } else {
-      nav.classList.remove("ocultar");
-    }
-
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   });
 
   document.addEventListener("scroll", detectarSection);

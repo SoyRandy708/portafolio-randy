@@ -102,7 +102,7 @@ const i18n = getI18N({ currentLocale });
     animation-fill-mode: both;
     animation-range: entry 25% cover 50%;
 
-    @media (width > 800px) {
+    @media (width >= 800px) {
       max-width: none;
       grid-template-columns: 1fr 1fr;
     }
@@ -129,7 +129,7 @@ const i18n = getI18N({ currentLocale });
       margin: 0;
       border-bottom: var(--texto-color) 2px solid;
 
-      @media (width < 400px) {
+      @media (width <= 400px) {
         font-size: 24px;
       }
     }
