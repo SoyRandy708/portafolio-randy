@@ -10,11 +10,11 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<Layout title={i18n.HEADERS.TITLE}>
-  <Navbar />
-  <Header />
+<Layout title={i18n.HEADERS.TITLE} i18n={i18n} curentLocale={currentLocale}>
+  <Navbar i18n={i18n} currentLocale={currentLocale} />
+  <Header i18n={i18n} />
   <main>
-    <Proyectos />
-    <Contacto />
+    <Proyectos i18n={i18n} />
+    <Contacto i18n={i18n} />
   </main>
 </Layout>

@@ -2,10 +2,9 @@
 import IconMenu from "@/Icons/IconMenu.astro";
 import IconClose from "@/Icons/IconClose.astro";
 import IconShow from "@/Icons/IconShow.astro";
-import { getI18N, LANGUAGES } from "@/i18n";
+import { LANGUAGES } from "@/i18n";
 
-const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
+const { currentLocale, i18n } = Astro.props;
 ---
 
 <nav>

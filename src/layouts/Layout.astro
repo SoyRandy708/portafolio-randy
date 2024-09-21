@@ -1,14 +1,7 @@
 ---
 import { IMAGE_URL } from "@/consts";
-import { getI18N } from "@/i18n";
 
-interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
-const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
+const { title, i18n, currentLocale } = Astro.props;
 ---
 
 <!doctype html>

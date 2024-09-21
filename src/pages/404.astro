@@ -15,7 +15,7 @@ const i18n = getI18N({ currentLocale });
       <p>
         {i18n.SECTION_404.TEXT}
       </p>
-      <BotonesContacto clase="botones-dos" />
+      <BotonesContacto i18n={i18n} clase="botones-dos" />
     </article>
 
     <a href={currentLocale === "en" ? "/" : "/es/"} class="boton-uno">

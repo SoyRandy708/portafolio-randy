@@ -1,10 +1,8 @@
 ---
 import IconContact from "@/Icons/IconContact.astro";
 import BotonesContacto from "./BotonesContacto.astro";
-import { getI18N } from "@/i18n";
 
-const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
+const { i18n } = Astro.props;
 ---
 
 <footer id={i18n.SECTION_NAVBAR.CONTACT}>
@@ -18,7 +16,7 @@ const i18n = getI18N({ currentLocale });
       {i18n.SECTION_CONTACT.TEXT}
     </p>
 
-    <BotonesContacto clase="botones-dos" />
+    <BotonesContacto i18n={i18n} clase="botones-dos" />
   </article>
 </footer>
 

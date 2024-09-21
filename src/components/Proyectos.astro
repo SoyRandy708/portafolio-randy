@@ -4,10 +4,8 @@ import IconGithub from "@/Icons/IconGithub.astro";
 import { TECNOLOGIAS_ICONOS, TODAS_TECNOLOGIAS } from "@/consts";
 import { PROYECTOS } from "@/consts";
 import IconCode from "@/Icons/IconCode.astro";
-import { getI18N } from "@/i18n";
 
-const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
+const { i18n } = Astro.props;
 ---
 
 <section id={i18n.SECTION_NAVBAR.PROJECTS}>

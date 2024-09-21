@@ -3,11 +3,8 @@ import IconFile from "@/Icons/IconFile.astro";
 import IconGithub from "@/Icons/IconGithub.astro";
 import IconLinkedin from "@/Icons/IconLinkedin.astro";
 import { IMAGE_URL } from "@/consts";
-import { getI18N } from "@/i18n";
 
-const { clase } = Astro.props;
-const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
+const { clase, i18n } = Astro.props;
 ---
 
 <article class=`${clase} boton-uno`>

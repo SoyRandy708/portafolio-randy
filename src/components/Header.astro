@@ -2,10 +2,8 @@
 import BotonesContacto from "./BotonesContacto.astro";
 import Tecnologias from "./Tecnologias.astro";
 import { IMAGE_URL } from "@/consts";
-import { getI18N } from "@/i18n";
 
-const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
+const { i18n } = Astro.props;
 ---
 
 <section id={i18n.SECTION_NAVBAR.HOME} class="section-active">
@@ -24,7 +22,7 @@ const i18n = getI18N({ currentLocale });
         </a>
       </div>
 
-      <BotonesContacto clase="botones-dos" />
+      <BotonesContacto i18n={i18n} clase="botones-dos" />
     </article>
 
     <div class="informacion">
@@ -38,7 +36,7 @@ const i18n = getI18N({ currentLocale });
     </div>
   </header>
 
-  <Tecnologias />
+  <Tecnologias i18n={i18n} />
 </section>
 
 <style>
