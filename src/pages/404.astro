@@ -1,13 +1,13 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { getI18N } from "@/i18n";
 import BotonesContacto from "@/components/BotonesContacto.astro";
+import { getI18N } from "@/i18n";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<Layout title={i18n.SECTION_404.TITLE}>
+<Layout title={i18n.SECTION_404.TITLE} i18n={i18n} curentLocale={currentLocale}>
   <main>
     <h1>{i18n.SECTION_404.TITLE}</h1>
 
