@@ -30,7 +30,7 @@ const { clase, i18n } = Astro.props;
     target="_blank"
     download
     aria-label="Download my CV"
-    href=`${IMAGE_URL}/CV_Randy-Ochoa_Frontend-Developer.pdf`
+    href={i18n.SECTION_BUTTONS.CV_LINK}
   >
     <IconFile width="30" height="30" />
     {i18n.SECTION_BUTTONS.CV}
